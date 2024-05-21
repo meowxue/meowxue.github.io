@@ -6,21 +6,21 @@
     <description>Recent content in Pages on 苏格拉</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 09 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 21 May 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://meowxue.github.io/page/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>关于</title>
+      <link>https://meowxue.github.io/about/</link>
+      <pubDate>Tue, 21 May 2024 00:00:00 +0000</pubDate>
+      <guid>https://meowxue.github.io/about/</guid>
+      <description>关于我 90后，处女男，普普通通的Java开发程序员，i型人格鉴赏家。喜欢骑行、唱歌、打游戏&amp;hellip;&#xA;关于博客 记录生活，记录自己的碎碎念 记录工作中踩过的坑、遇到的问题的一些相关解决方法 自己研究、实践的一些记录 这个博客算是我自己的一个秘密基地吧，没有弄留言相关的功能，如果想联系我，想交个朋友的话， 可以通过邮件联系我（meow_xue@163.com）。</description>
+    </item>
     <item>
       <title>归档</title>
       <link>https://meowxue.github.io/archives/</link>
       <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
       <guid>https://meowxue.github.io/archives/</guid>
       <description></description>
-    </item>
-    <item>
-      <title>关于</title>
-      <link>https://meowxue.github.io/about/</link>
-      <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>https://meowxue.github.io/about/</guid>
-      <description>关于我 90后，处女男，普普通通的程序员，i型人格鉴赏家。喜欢骑行、唱歌、打游戏&amp;hellip;&#xA;关于博客 记录生活，记录自己的碎碎念。 工作中踩过的坑，遇到的问题，方便随时查阅。（因为好多都是以前记录的，到新站又重新搬运了一遍） 这个博客算是我自己的一个秘密基地吧，没有弄留言相关的功能，如果想联系我，想和我交个朋友的话， 可以在左侧通过邮件联系我。</description>
     </item>
     <item>
       <title>搜索</title>
