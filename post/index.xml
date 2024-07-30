@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on 苏格拉</title>
+    <link>https://meowxue.github.io/post/</link>
+    <description>Recent content in Posts on 苏格拉</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 05 Jun 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://meowxue.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows计划任务执行结果为0x1</title>
+      <link>https://meowxue.github.io/p/windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C%E4%B8%BA0x1/</link>
+      <pubDate>Wed, 05 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://meowxue.github.io/p/windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C%E4%B8%BA0x1/</guid>
+      <description>事情是这样的，我用java写了个运维的程序，在服务器上定时给我发送程序的运行状态和日志。写好后放到服务器上做了一个定时任务，通过windows自带的计划任务来执行bat脚本。但是我发现双击bat脚本执行是没有问题的，但是在计划任务执行的时候就会失败，运行结果为0x1。&#xA;报错原因：程序和脚本中的bat脚本带有目录结构，但是起始的哪里没有配置批处理脚本所在目录路径&#xA;计划任务编辑操作.png 在红框处配置bat脚本文件的路径就可以执行成功了。</description>
+    </item>
+    <item>
+      <title>Windows服务器中Oracle数据库定时备份</title>
+      <link>https://meowxue.github.io/p/windows%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/</link>
+      <pubDate>Fri, 10 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://meowxue.github.io/p/windows%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/</guid>
+      <description>脚本准备 rem delete 10 days files forfiles /p &amp;#34;文件路径&amp;#34; /d -10 /c &amp;#34;cmd /c echo deleting @file ... &amp;amp;&amp;amp; del /f @path&amp;#34; rem expdp sz set sz_file=备份文件名字%date:~0,4%%date:~5,2%%date:~8,2% expdp 数据库用户名/数据库密码@数据库实例名 directory=路径对象 dumpfile=%sz_file%.dmp logfile=%sz_file%.log schemas=导出的用户 compression=all 在合适的位置新建一个.bat文件，将上面的脚本复制到里面，再根据下面的说明修改好脚本。&#xA;注：如果密码中存在特殊字符，需要做特殊处理，如：&#xA;zhangsan/&amp;#34;&amp;#34;&amp;#34;abc@123&amp;#34;&amp;#34;&amp;#34;@orcl 文件路径: 备份文件所在目录&#xA;-10: 删除两天前的文件，也就是说保留两天的数据，可根据实际情况修改&#xA;备份文件名字: 此处为前缀加时间的格式 例如：xxxxx202308025120000.dmp&#xA;数据库实例名: 如：orcl，有时候可能需要补全ip地址，如：192.168.3.10/orcl&#xA;路径对象: 导出文件目录，此处的目录和平常的目录不同，这是存在于数据库中的目录对象，要使用这个对象需要用sql命令来创建&#xA;CREATE DIRECTORY hrpbackup AS &amp;#39;备份文件要存放的路径&amp;#39;; SELECT directory_name, directory_path FROM all_directories; 导出的用户: 此处为指定导出的用户，建议和数据库的用户名一致&#xA;脚本调整好后，可以双击启动测试是否能够成功备份。&#xA;开启服务器的定时任务 利用windows服务器中的任务计划程序，来定时执行数据库的备份脚本。&#xA;打开任务计划程序 Win + R 打开运行窗口，输入 taskschd.msc 确定，打开任务计划程序</description>
+    </item>
+    <item>
+      <title>Linux服务器中Oracle数据库定时备份</title>
+      <link>https://meowxue.github.io/p/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/</link>
+      <pubDate>Wed, 30 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://meowxue.github.io/p/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/</guid>
+      <description>&lt;h1 id=&#34;概述&#34;&gt;概述&lt;/h1&gt;&#xA;&lt;p&gt;大多数的linux发行版都默认安装了corn服务和crontab工具。cron服务是一个用于执行定时任务的后台服务，而crontab是用于编辑和管理用户的定时任务的命令行工具。通过crontab工具，用户可以添加、编辑、删除定时任务的执行时间和要运行的命令或者脚本。&lt;/p&gt;&#xA;&lt;p&gt;利用定时执行备份的shell脚本。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>用sqlserver官方驱动包调用存储过程遇到的一个坑</title>
+      <link>https://meowxue.github.io/p/%E7%94%A8sqlserver%E5%AE%98%E6%96%B9%E9%A9%B1%E5%8A%A8%E5%8C%85%E8%B0%83%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9D%91/</link>
+      <pubDate>Thu, 13 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>https://meowxue.github.io/p/%E7%94%A8sqlserver%E5%AE%98%E6%96%B9%E9%A9%B1%E5%8A%A8%E5%8C%85%E8%B0%83%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9D%91/</guid>
+      <description>和外部系统做对接，对方提供了一个存储过程，对方为sqlserver数据库，我方为oracle数据库。 需求简单来说就是调用对方的存储过程获得结果，转储到我方库，后续在对数据进行处理。&#xA;我写了个代码片段做测试，用jdbc来调用对方的存储过程，可是在调用后就直接报错了，错误信息如下&#xA;com.microsoft.sqlserver.jdbc.SQLServerException: 该语句没有返回结果集 我就不理解了，为啥用数据库连接工具调就没问题呢？是有结果集的呀。&#xA;疯狂找资料，找帖子。最后终于是找到了。&#xA;解决方法：&#xA;换驱动包。对方数据库是SQL server2008，我用的是 sqljdbc4-4.0 。直接换了第三方开源的SQL Server数据库的JDBC驱动程序 jtds1.2。问题解决，调用存储过程的时候不再出错。 在存储过程首行添加 set nocount on （这个我没实验，因为存储过程没在我手里，操作不到） 最后记录一段jdbc调用存储结构的代码，一个参数，返回结果集&#xA;import java.sql.CallableStatement; import java.sql.Connection; import java.sql.DriverManager; import java.sql.ResultSet; import java.sql.Statement; import java.text.SimpleDateFormat; import java.util.ArrayList; import java.util.Calendar; import java.util.Date; import java.util.HashMap; import java.util.List; import java.util.Map; public class Test { final static String SERVERURL = &amp;#34;jdbc:jtds:sqlserver://127.0.0.1:1433;DatabaseName=XXX&amp;#34;; final static String SERVERDriver = &amp;#34;net.sourceforge.jtds.jdbc.Driver&amp;#34;; final static String SERVERUSERNAME = &amp;#34;username&amp;#34;; final static String SERVERPASSWORD = &amp;#34;password&amp;#34;; public static void main(String[] args) { try { //调用存储过程 Class.</description>
+    </item>
+    <item>
+      <title>Linux中安装nvm</title>
+      <link>https://meowxue.github.io/p/linux%E4%B8%AD%E5%AE%89%E8%A3%85nvm/</link>
+      <pubDate>Fri, 27 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://meowxue.github.io/p/linux%E4%B8%AD%E5%AE%89%E8%A3%85nvm/</guid>
+      <description>NVM 是一个非常方便的node包管理工具，可以实现在NodeJS 各个不同版本之间自由的进行切换。 1.下载nvm安装包 官网地址： https://github.com/nvm-sh/nvm&#xA;可选择最新的Releases版本，下面用0.38.0这个版本做示范&#xA;示例版本地址：https://github.com/nvm-sh/nvm/archive/refs/tags/v0.38.0.tar.gz&#xA;2.解压nvm tar -zxvf nvm-0.38.0.tar.gz 可以移动解压的文件到你想放的目录&#xA;3.配置环境 打开 ~/.bashrc&#xA;vim ~/.bashrc 在 ~/.bashrc 的末尾加上以下的语句&#xA;export NVM_DIR=&amp;#34;$HOME/nvm所在的目录&amp;#34; [ -s &amp;#34;$NVM_DIR/nvm.sh&amp;#34; ] &amp;amp;&amp;amp; \. &amp;#34;$NVM_DIR/nvm.sh&amp;#34; # This loads nvm [ -s &amp;#34;$NVM_DIR/bash_completion&amp;#34; ] &amp;amp;&amp;amp; \. &amp;#34;$NVM_DIR/bash_completion&amp;#34; # This loads nvm bash_completion # nodejs下载更换淘宝镜像 export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node 4.编译生效 source ~/.bashrc 验证是否成功，终端输入以下命令查看nvm版本号&#xA;nvm -v 显示安装的版本号，即成功&#xA;5.nvm常用命令 #查询目前线上所能安装的所有nodejs版本 nvm ls-remote #安装相应版本nodejs nvm install 14.19.3 #使用相应版本的nodejs nvm use 14.19.3 #列出已经安装的版本 nvm ls #卸载相应的nodejs nvm uninstall 14.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Oracle on 苏格拉</title>
+    <link>https://meowxue.github.io/tags/oracle/</link>
+    <description>Recent content in Oracle on 苏格拉</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 10 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://meowxue.github.io/tags/oracle/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows服务器中Oracle数据库定时备份</title>
+      <link>https://meowxue.github.io/p/windows%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/</link>
+      <pubDate>Fri, 10 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://meowxue.github.io/p/windows%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/</guid>
+      <description>脚本准备 rem delete 10 days files forfiles /p &amp;#34;文件路径&amp;#34; /d -10 /c &amp;#34;cmd /c echo deleting @file ... &amp;amp;&amp;amp; del /f @path&amp;#34; rem expdp sz set sz_file=备份文件名字%date:~0,4%%date:~5,2%%date:~8,2% expdp 数据库用户名/数据库密码@数据库实例名 directory=路径对象 dumpfile=%sz_file%.dmp logfile=%sz_file%.log schemas=导出的用户 compression=all 在合适的位置新建一个.bat文件，将上面的脚本复制到里面，再根据下面的说明修改好脚本。&#xA;注：如果密码中存在特殊字符，需要做特殊处理，如：&#xA;zhangsan/&amp;#34;&amp;#34;&amp;#34;abc@123&amp;#34;&amp;#34;&amp;#34;@orcl 文件路径: 备份文件所在目录&#xA;-10: 删除两天前的文件，也就是说保留两天的数据，可根据实际情况修改&#xA;备份文件名字: 此处为前缀加时间的格式 例如：xxxxx202308025120000.dmp&#xA;数据库实例名: 如：orcl，有时候可能需要补全ip地址，如：192.168.3.10/orcl&#xA;路径对象: 导出文件目录，此处的目录和平常的目录不同，这是存在于数据库中的目录对象，要使用这个对象需要用sql命令来创建&#xA;CREATE DIRECTORY hrpbackup AS &amp;#39;备份文件要存放的路径&amp;#39;; SELECT directory_name, directory_path FROM all_directories; 导出的用户: 此处为指定导出的用户，建议和数据库的用户名一致&#xA;脚本调整好后，可以双击启动测试是否能够成功备份。&#xA;开启服务器的定时任务 利用windows服务器中的任务计划程序，来定时执行数据库的备份脚本。&#xA;打开任务计划程序 Win + R 打开运行窗口，输入 taskschd.msc 确定，打开任务计划程序</description>
+    </item>
+    <item>
+      <title>Linux服务器中Oracle数据库定时备份</title>
+      <link>https://meowxue.github.io/p/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/</link>
+      <pubDate>Wed, 30 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://meowxue.github.io/p/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/</guid>
+      <description>&lt;h1 id=&#34;概述&#34;&gt;概述&lt;/h1&gt;&#xA;&lt;p&gt;大多数的linux发行版都默认安装了corn服务和crontab工具。cron服务是一个用于执行定时任务的后台服务，而crontab是用于编辑和管理用户的定时任务的命令行工具。通过crontab工具，用户可以添加、编辑、删除定时任务的执行时间和要运行的命令或者脚本。&lt;/p&gt;&#xA;&lt;p&gt;利用定时执行备份的shell脚本。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

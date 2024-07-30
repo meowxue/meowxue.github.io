@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='概述 大多数的linux发行版都默认安装了corn服务和crontab工具。cron服务是一个用于执行定时任务的后台服务，而crontab是用于编辑和管理用户的定时任务的命令行工具。通过crontab工具，用户可以添加、编辑、删除定时任务的执行时间和要运行的命令或者脚本。
+利用定时执行备份的shell脚本。
+'><title>Linux服务器中Oracle数据库定时备份</title>
+
+<link rel='canonical' href='https://meowxue.github.io/p/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Linux服务器中Oracle数据库定时备份'>
+<meta property='og:description' content='概述 大多数的linux发行版都默认安装了corn服务和crontab工具。cron服务是一个用于执行定时任务的后台服务，而crontab是用于编辑和管理用户的定时任务的命令行工具。通过crontab工具，用户可以添加、编辑、删除定时任务的执行时间和要运行的命令或者脚本。
+利用定时执行备份的shell脚本。
+'>
+<meta property='og:url' content='https://meowxue.github.io/p/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/'>
+<meta property='og:site_name' content='苏格拉'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Linux' /><meta property='article:tag' content='运维' /><meta property='article:tag' content='oracle' /><meta property='article:published_time' content='2023-08-30T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2023-08-30T00:00:00&#43;00:00'/><meta property='og:image' content='https://api.r10086.com/樱道随机图片api接口.php?图片系列=动漫综合1&amp;6' />
+<meta name="twitter:title" content="Linux服务器中Oracle数据库定时备份">
+<meta name="twitter:description" content="概述 大多数的linux发行版都默认安装了corn服务和crontab工具。cron服务是一个用于执行定时任务的后台服务，而crontab是用于编辑和管理用户的定时任务的命令行工具。通过crontab工具，用户可以添加、编辑、删除定时任务的执行时间和要运行的命令或者脚本。
+利用定时执行备份的shell脚本。
+"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://api.r10086.com/樱道随机图片api接口.php?图片系列=动漫综合1&amp;6' />
+  
+
+
+    </head>
+    <body class="
+    article-page has-toc
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        extended
+    
+">
+    
+        <div id="article-toolbar">
+            <a href="/" class="back-home">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+                <span>返回</span>
+            </a>
+        </div>
+    
+<main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/">
+                
+                    <img src="https://api.r10086.com/%e6%a8%b1%e9%81%93%e9%9a%8f%e6%9c%ba%e5%9b%be%e7%89%87api%e6%8e%a5%e5%8f%a3.php?%e5%9b%be%e7%89%87%e7%b3%bb%e5%88%97=%e5%8a%a8%e6%bc%ab%e7%bb%bc%e5%90%881&amp;6" loading="lazy" alt="Featured image of post Linux服务器中Oracle数据库定时备份" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/linux/" style="background-color: #2a9d8f; color: #fff;">
+                Linux
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/">Linux服务器中Oracle数据库定时备份</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Aug 30, 2023</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 2 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <h1 id="概述">概述</h1>
+<p>大多数的linux发行版都默认安装了corn服务和crontab工具。cron服务是一个用于执行定时任务的后台服务，而crontab是用于编辑和管理用户的定时任务的命令行工具。通过crontab工具，用户可以添加、编辑、删除定时任务的执行时间和要运行的命令或者脚本。</p>
+<p>利用定时执行备份的shell脚本。</p>
+<h1 id="shell脚本">shell脚本</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">#配置数据库的环境变量</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">ORACLE_HOME</span><span class="o">=</span>/home/oracle/app/oracle/product/11.2.0/db_1/
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$ORACLE_HOME</span>/bin:<span class="nv">$PATH</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#备份文件存放位置</span>
+</span></span><span class="line"><span class="cl"><span class="nv">BACKUP</span><span class="o">=</span>/usr/local/DBback/
+</span></span><span class="line"><span class="cl"><span class="c1">#数据库目录对象</span>
+</span></span><span class="line"><span class="cl"><span class="nv">DIRECTORY</span><span class="o">=</span>HRPBACKUP
+</span></span><span class="line"><span class="cl"><span class="c1">#当前时间</span>
+</span></span><span class="line"><span class="cl"><span class="nv">DATETIME</span><span class="o">=</span><span class="k">$(</span>date +%Y-%m-%d_%H%M%S<span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="nv">$DATETIME</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#数据库地址</span>
+</span></span><span class="line"><span class="cl"><span class="nv">HOST</span><span class="o">=</span>127.0.0.1/orcl
+</span></span><span class="line"><span class="cl"><span class="nv">USERNAME</span><span class="o">=</span>username
+</span></span><span class="line"><span class="cl"><span class="nv">PASSWORD</span><span class="o">=</span><span class="m">123456</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#创建备份目录，如果不存在就创建</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span> ! -d <span class="s2">&#34;</span><span class="si">${</span><span class="nv">BACKUP</span><span class="si">}</span><span class="s2">&#34;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> mkdir -p <span class="s2">&#34;</span><span class="si">${</span><span class="nv">BACKUP</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#打印导出命令</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;expdp </span><span class="si">${</span><span class="nv">USERNAME</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">PASSWORD</span><span class="si">}</span><span class="s2">@</span><span class="si">${</span><span class="nv">HOST</span><span class="si">}</span><span class="s2"> directory=</span><span class="si">${</span><span class="nv">DIRECTORY</span><span class="si">}</span><span class="s2"> dumpfile=</span><span class="si">${</span><span class="nv">DATETIME</span><span class="si">}</span><span class="s2">_back.dmp logfile=</span><span class="si">${</span><span class="nv">DATETIME</span><span class="si">}</span><span class="s2">.log schemas=</span><span class="si">${</span><span class="nv">USERNAME</span><span class="si">}</span><span class="s2"> compression=all&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#备份数据库</span>
+</span></span><span class="line"><span class="cl">expdp <span class="si">${</span><span class="nv">USERNAME</span><span class="si">}</span>/<span class="si">${</span><span class="nv">PASSWORD</span><span class="si">}</span>@<span class="si">${</span><span class="nv">HOST</span><span class="si">}</span> <span class="nv">directory</span><span class="o">=</span><span class="si">${</span><span class="nv">DIRECTORY</span><span class="si">}</span> <span class="nv">dumpfile</span><span class="o">=</span><span class="si">${</span><span class="nv">DATETIME</span><span class="si">}</span>_back.dmp <span class="nv">logfile</span><span class="o">=</span><span class="si">${</span><span class="nv">DATETIME</span><span class="si">}</span>.log <span class="nv">schemas</span><span class="o">=</span><span class="si">${</span><span class="nv">USERNAME</span><span class="si">}</span> <span class="nv">compression</span><span class="o">=</span>all
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#删除10天前的数据</span>
+</span></span><span class="line"><span class="cl">find <span class="si">${</span><span class="nv">BACKUP</span><span class="si">}</span> -atime +10 -name <span class="s2">&#34;*_back.dmp&#34;</span> -exec rm -ef <span class="o">{}</span> <span class="se">\;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;备份完成&#34;</span>
+</span></span></code></pre></div><h2 id="注意的点和相关的问题">注意的点和相关的问题</h2>
+<h3 id="1为什么要再次设置环境变量">1.为什么要再次设置环境变量?</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#配置数据库的环境变量</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">ORACLE_HOME</span><span class="o">=</span>/home/oracle/app/oracle/product/11.2.0/db_1/
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$ORACLE_HOME</span>/bin:<span class="nv">$PATH</span>
+</span></span></code></pre></div><p>cron运行的环境和正常的shell执行环境不同。在正常情况下直接执行备份的shell脚本 expdp 命令可以被正确识别，但放到 crontab 中，expdp 命令将会出错，错误信息大概如下：</p>
+<pre tabindex="0"><code>UDE-00013: Message 13 not found; No message file for product=RDBMS, facility=UDE
+UDE-00019: You may need to set ORACLE_HOME to your Oracle software directory
+</code></pre><p>export 将变量设置为环境变量，并且在当前shell会话及子进程中可见和可访问。</p>
+<h3 id="2数据库目录对象">2.数据库目录对象</h3>
+<p>此处为oracle的文件目录对象,类似于将路径起个变量名，并将这种对应关系保存在数据库中。</p>
+<p>查询所有文件目录</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="n">directory_name</span><span class="p">,</span><span class="w"> </span><span class="n">directory_path</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">all_directories</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><p>查询结果中的 directory_path 要与 脚本中的 BACKUP 路径一致。</p>
+<p>创建文件目录</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="n">DIRECTORY</span><span class="w"> </span><span class="n">hrpbackup</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s1">&#39;备份文件要存放的路径&#39;</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><p>授予公共用户对目录（directory）的读取和写入权限。（非必须）</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">grant</span><span class="w"> </span><span class="k">read</span><span class="p">,</span><span class="k">write</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">directory</span><span class="w"> </span><span class="err">目录对象</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">public</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><h3 id="3脚本完成后">3.脚本完成后</h3>
+<p>给脚本添加可执行权限</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod +x 备份.sh
+</span></span></code></pre></div><p>创建的目录 BACKUP 也需要设置权限</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod <span class="m">777</span> /usr/local/DBback
+</span></span></code></pre></div><h1 id="定时">定时</h1>
+<p>查询当前所有的定时任务</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">crontab -l
+</span></span></code></pre></div><p>编辑定时任务</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">crontab -e
+</span></span></code></pre></div><p>crontab 相关命令</p>
+<pre tabindex="0"><code>(1) 语法
+crontab [-u &lt;用户名称&gt;][配置文件] 或 crontab { -l | -r | -e }
+-u   #&lt;用户名称&gt; 是指设定指定&lt;用户名称&gt;的定时任务，这个前提是你必须要有其权限(比如说是 root)才能够指定他人的时程表。如果不使用 -u user 的话，就是表示设定自己的定时任务。
+-l 　#列出该用户的定时任务设置。
+-r 　#删除该用户的定时任务设置。
+-e 　#编辑该用户的定时任务设置。
+(2) 命令时间格式：
+*     * 　  *　  *　  *　　command
+分　  时　  日　  月　 周　  命令
+
+第1列表示分钟1～59 每分钟用*或者 */1表示
+第2列表示小时1～23（0表示0点）
+第3列表示日期1～31
+第4列表示月份1～12
+第5列标识号星期0～6（0表示星期天）
+第6列要运行的命令
+(3)一些Crontab定时任务例子：
+30 21 * * * /usr/local/etc/rc.d/lighttpd restart  #每晚的21:30 重启apache
+45 4 1,10,22 * * /usr/local/etc/rc.d/lighttpd restart  #每月1、10、22日的4 : 45重启apache
+10 1 * * 6,0 /usr/local/etc/rc.d/lighttpd restart  #每周六、周日的1 : 10重启apache
+0,30 18-23 * * * /usr/local/etc/rc.d/lighttpd restart  #每天18 : 00至23 : 00之间每隔30分钟重启apache
+0 23 * * 6 /usr/local/etc/rc.d/lighttpd restart  #每星期六的11 : 00 pm重启apache
+* 23-7/1 * * * /usr/local/etc/rc.d/lighttpd restart  #晚上11点到早上7点之间，每隔一小时重启apache
+* */1 * * * /usr/local/etc/rc.d/lighttpd restart  #每一小时重启apache
+0 11 4 * mon-wed /usr/local/etc/rc.d/lighttpd restart  #每月的4号与每周一到周三的11点重启apache
+0 4 1 jan * /usr/local/etc/rc.d/lighttpd restart  #一月一号的4点重启apache
+ 
+*/30 * * * * /usr/sbin/ntpdate cn.pool.ntp.org  #每半小时同步一下时间
+0 */2 * * * /sbin/service httpd restart  #每两个小时重启一次apache 
+50 7 * * * /sbin/service sshd start  #每天7：50开启ssh服务 
+50 22 * * * /sbin/service sshd stop  #每天22：50关闭ssh服务 
+0 0 1,15 * * fsck /home  #每月1号和15号检查/home 磁盘 
+1 * * * * /home/bruce/backup  #每小时的第一分执行 /home/bruce/backup这个文件 
+00 03 * * 1-5 find /home &#34;*.xxx&#34; -mtime +4 -exec rm {} \;  #每周一至周五3点钟，在目录/home中，查找文件名为*.xxx的文件，并删除4天前的文件。
+30 6 */10 * * ls  #每月的1、11、21、31日是的6：30执行一次ls命令
+</code></pre><p>例如：每天晚上11点30分执行定时备份脚本 /usr/local/backup.sh</p>
+<p>路径要写全</p>
+<pre tabindex="0"><code>30 11 * * * /usr/local/backup.sh
+</code></pre><p>crontab在线工具 <a class="link" href="https://tool.lu/crontab"  target="_blank" rel="noopener"
+    >https://tool.lu/crontab</a></p>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/linux/">Linux</a>
+        
+            <a href="/tags/%E8%BF%90%E7%BB%B4/">运维</a>
+        
+            <a href="/tags/oracle/">Oracle</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/linux%E4%B8%AD%E5%AE%89%E8%A3%85nvm/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://api.r10086.com/%e6%a8%b1%e9%81%93%e9%9a%8f%e6%9c%ba%e5%9b%be%e7%89%87api%e6%8e%a5%e5%8f%a3.php?%e5%9b%be%e7%89%87%e7%b3%bb%e5%88%97=%e5%8a%a8%e6%bc%ab%e7%bb%bc%e5%90%881&amp;4" loading="lazy" data-key="" data-hash="https://api.r10086.com/樱道随机图片api接口.php?图片系列=动漫综合1&amp;4"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Linux中安装nvm</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/windows%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://api.r10086.com/%e6%a8%b1%e9%81%93%e9%9a%8f%e6%9c%ba%e5%9b%be%e7%89%87api%e6%8e%a5%e5%8f%a3.php?%e5%9b%be%e7%89%87%e7%b3%bb%e5%88%97=%e5%8a%a8%e6%bc%ab%e7%bb%bc%e5%90%881&amp;5" loading="lazy" data-key="" data-hash="https://api.r10086.com/樱道随机图片api接口.php?图片系列=动漫综合1&amp;5"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Windows服务器中Oracle数据库定时备份</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (DISQUS) {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2024 苏格拉
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+        <aside class="sidebar right-sidebar sticky">
+            <section class="widget archives">
+                <div class="widget-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                </div>
+                <h2 class="widget-title section-title">目录</h2>
+                
+                <div class="widget--toc">
+                    <nav id="TableOfContents">
+  <ol>
+    <li><a href="#注意的点和相关的问题">注意的点和相关的问题</a>
+      <ol>
+        <li><a href="#1为什么要再次设置环境变量">1.为什么要再次设置环境变量?</a></li>
+        <li><a href="#2数据库目录对象">2.数据库目录对象</a></li>
+        <li><a href="#3脚本完成后">3.脚本完成后</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+                </div>
+            </section>
+        </aside>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

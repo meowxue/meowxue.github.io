@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>软件 on 苏格拉</title>
+    <link>https://meowxue.github.io/tags/%E8%BD%AF%E4%BB%B6/</link>
+    <description>Recent content in 软件 on 苏格拉</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 27 May 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://meowxue.github.io/tags/%E8%BD%AF%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux中安装nvm</title>
+      <link>https://meowxue.github.io/p/linux%E4%B8%AD%E5%AE%89%E8%A3%85nvm/</link>
+      <pubDate>Fri, 27 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://meowxue.github.io/p/linux%E4%B8%AD%E5%AE%89%E8%A3%85nvm/</guid>
+      <description>NVM 是一个非常方便的node包管理工具，可以实现在NodeJS 各个不同版本之间自由的进行切换。 1.下载nvm安装包 官网地址： https://github.com/nvm-sh/nvm&#xA;可选择最新的Releases版本，下面用0.38.0这个版本做示范&#xA;示例版本地址：https://github.com/nvm-sh/nvm/archive/refs/tags/v0.38.0.tar.gz&#xA;2.解压nvm tar -zxvf nvm-0.38.0.tar.gz 可以移动解压的文件到你想放的目录&#xA;3.配置环境 打开 ~/.bashrc&#xA;vim ~/.bashrc 在 ~/.bashrc 的末尾加上以下的语句&#xA;export NVM_DIR=&amp;#34;$HOME/nvm所在的目录&amp;#34; [ -s &amp;#34;$NVM_DIR/nvm.sh&amp;#34; ] &amp;amp;&amp;amp; \. &amp;#34;$NVM_DIR/nvm.sh&amp;#34; # This loads nvm [ -s &amp;#34;$NVM_DIR/bash_completion&amp;#34; ] &amp;amp;&amp;amp; \. &amp;#34;$NVM_DIR/bash_completion&amp;#34; # This loads nvm bash_completion # nodejs下载更换淘宝镜像 export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node 4.编译生效 source ~/.bashrc 验证是否成功，终端输入以下命令查看nvm版本号&#xA;nvm -v 显示安装的版本号，即成功&#xA;5.nvm常用命令 #查询目前线上所能安装的所有nodejs版本 nvm ls-remote #安装相应版本nodejs nvm install 14.19.3 #使用相应版本的nodejs nvm use 14.19.3 #列出已经安装的版本 nvm ls #卸载相应的nodejs nvm uninstall 14.</description>
+    </item>
+  </channel>
+</rss>
