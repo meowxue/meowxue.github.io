@@ -6,13 +6,38 @@
         <description>Recent content on 苏格拉</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Wed, 05 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://meowxue.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 10 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://meowxue.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>maven安装本地的jar包到仓库</title>
+        <link>https://meowxue.github.io/p/maven%E5%AE%89%E8%A3%85%E6%9C%AC%E5%9C%B0%E7%9A%84jar%E5%8C%85%E5%88%B0%E4%BB%93%E5%BA%93/</link>
+        <pubDate>Sat, 10 Aug 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://meowxue.github.io/p/maven%E5%AE%89%E8%A3%85%E6%9C%AC%E5%9C%B0%E7%9A%84jar%E5%8C%85%E5%88%B0%E4%BB%93%E5%BA%93/</guid>
+        <description>&lt;p&gt;项目中有用到人大金仓的数据库，但是这个包，在maven仓库中找不到，所以需要手动安装到仓库中。在此记录如何将下载好的jar包安装到仓库中。&lt;/p&gt;
+&lt;p&gt;命令格式如下:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;mvn -s /home/meowxue/Dev/environment/apache-maven-3.9.8/conf/settings-private.xml install:install-file -DgroupId=com.kingbase8 -DartifactId=kingbase8 -Dversion=8.6.0 -Dfile=/home/meowxue/下载/kingbase8/kingbase8/8.6.0/kingbase8-8.6.0.jar -Dpackaging=jar -DgeneratePom=true
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;说明：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;-s：指定settings.xml文件路径
+
+-DgroupId：jar包所在组，对应pom.xml中的groupId
+
+-DartifactId：jar包名称，对应pom.xml中的artifactId
+
+-Dversion：jar包版本，对应pom.xml中的version
+
+-Dfile：jar包路径
+
+-Dpackaging：jar包类型（一般都为jar）
+
+-DgeneratePom=true：是否生成对应的pom.xml文件&lt;/code&gt;&lt;/pre&gt;
+</description>
+        </item>
+        <item>
         <title>Windows计划任务执行结果为0x1</title>
         <link>https://meowxue.github.io/p/windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C%E4%B8%BA0x1/</link>
         <pubDate>Wed, 05 Jun 2024 00:00:00 +0000</pubDate>
         
         <guid>https://meowxue.github.io/p/windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C%E4%B8%BA0x1/</guid>
-        <description>&lt;img src="https://api.r10086.com/樱道随机图片api接口.php?图片系列=动漫综合1&amp;3" alt="Featured image of post Windows计划任务执行结果为0x1" /&gt;&lt;p&gt;事情是这样的，我用java写了个运维的程序，在服务器上定时给我发送程序的运行状态和日志。写好后放到服务器上做了一个定时任务，通过windows自带的计划任务来执行bat脚本。但是我发现双击bat脚本执行是没有问题的，但是在计划任务执行的时候就会失败，运行结果为0x1。&lt;/p&gt;
+        <description>&lt;p&gt;事情是这样的，我用java写了个运维的程序，在服务器上定时给我发送程序的运行状态和日志。写好后放到服务器上做了一个定时任务，通过windows自带的计划任务来执行bat脚本。但是我发现双击bat脚本执行是没有问题的，但是在计划任务执行的时候就会失败，运行结果为0x1。&lt;/p&gt;
 &lt;p&gt;报错原因：程序和脚本中的bat脚本带有目录结构，但是起始的哪里没有配置批处理脚本所在目录路径&lt;/p&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://imgse.com/i/pkJHoQS&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;&lt;figure 
@@ -38,7 +63,7 @@
         <pubDate>Fri, 10 Nov 2023 00:00:00 +0000</pubDate>
         
         <guid>https://meowxue.github.io/p/windows%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/</guid>
-        <description>&lt;img src="https://api.r10086.com/樱道随机图片api接口.php?图片系列=动漫综合1&amp;5" alt="Featured image of post Windows服务器中Oracle数据库定时备份" /&gt;&lt;h2 id=&#34;脚本准备&#34;&gt;脚本准备&lt;/h2&gt;
+        <description>&lt;h2 id=&#34;脚本准备&#34;&gt;脚本准备&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bat&#34; data-lang=&#34;bat&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;rem delete 10 days files&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;forfiles /p &lt;span class=&#34;s2&#34;&gt;&amp;#34;文件路径&amp;#34;&lt;/span&gt; /d  -10 /c &lt;span class=&#34;s2&#34;&gt;&amp;#34;cmd /c echo deleting @file ... &amp;amp;&amp;amp; del /f @path&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
@@ -63,119 +88,126 @@
 &lt;p&gt;利用windows服务器中的任务计划程序，来定时执行数据库的备份脚本。&lt;/p&gt;
 &lt;h3 id=&#34;打开任务计划程序&#34;&gt;打开任务计划程序&lt;/h3&gt;
 &lt;p&gt;Win + R 打开运行窗口，输入 taskschd.msc 确定，打开任务计划程序&lt;/p&gt;
-&lt;p&gt;&lt;figure 
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://imgse.com/i/pPtR4UK&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;figure 
 	&gt;
-	&lt;a href=&#34;https://img2023.cnblogs.com/blog/2418880/202311/2418880-20231110143221475-734833453.png&#34; &gt;
-		&lt;img src=&#34;https://img2023.cnblogs.com/blog/2418880/202311/2418880-20231110143221475-734833453.png&#34;
+	&lt;a href=&#34;https://s11.ax1x.com/2023/08/25/pPtR4UK.png&#34; &gt;
+		&lt;img src=&#34;https://s11.ax1x.com/2023/08/25/pPtR4UK.png&#34;
 			
 			
 			
 			loading=&#34;lazy&#34;
-			alt=&#34;image&#34;&gt;
+			alt=&#34;pPtR4UK.png&#34;&gt;
 	&lt;/a&gt;
 	
-	&lt;figcaption&gt;image&lt;/figcaption&gt;
+	&lt;figcaption&gt;pPtR4UK.png&lt;/figcaption&gt;
 	
-&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;&lt;figure 
+&lt;/figure&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://imgse.com/i/pPtRoCD&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;figure 
 	&gt;
-	&lt;a href=&#34;https://img2023.cnblogs.com/blog/2418880/202311/2418880-20231110143239023-324237866.png&#34; &gt;
-		&lt;img src=&#34;https://img2023.cnblogs.com/blog/2418880/202311/2418880-20231110143239023-324237866.png&#34;
+	&lt;a href=&#34;https://s11.ax1x.com/2023/08/25/pPtRoCD.png&#34; &gt;
+		&lt;img src=&#34;https://s11.ax1x.com/2023/08/25/pPtRoCD.png&#34;
 			
 			
 			
 			loading=&#34;lazy&#34;
-			alt=&#34;image&#34;&gt;
+			alt=&#34;pPtRoCD.png&#34;&gt;
 	&lt;/a&gt;
 	
-	&lt;figcaption&gt;image&lt;/figcaption&gt;
+	&lt;figcaption&gt;pPtRoCD.png&lt;/figcaption&gt;
 	
-&lt;/figure&gt;&lt;/p&gt;
+&lt;/figure&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;创建基本任务&#34;&gt;创建基本任务&lt;/h3&gt;
 &lt;p&gt;点击左侧 创建基本任务&lt;/p&gt;
-&lt;p&gt;&lt;figure 
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://imgse.com/i/pPtR7gH&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;figure 
 	&gt;
-	&lt;a href=&#34;https://img2023.cnblogs.com/blog/2418880/202311/2418880-20231110143256435-1304722002.png&#34; &gt;
-		&lt;img src=&#34;https://img2023.cnblogs.com/blog/2418880/202311/2418880-20231110143256435-1304722002.png&#34;
+	&lt;a href=&#34;https://s11.ax1x.com/2023/08/25/pPtR7gH.png&#34; &gt;
+		&lt;img src=&#34;https://s11.ax1x.com/2023/08/25/pPtR7gH.png&#34;
 			
 			
 			
 			loading=&#34;lazy&#34;
-			alt=&#34;image&#34;&gt;
+			alt=&#34;pPtR7gH.png&#34;&gt;
 	&lt;/a&gt;
 	
-	&lt;figcaption&gt;image&lt;/figcaption&gt;
+	&lt;figcaption&gt;pPtR7gH.png&lt;/figcaption&gt;
 	
-&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;&lt;figure 
+&lt;/figure&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://imgse.com/i/pPtRqKA&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;figure 
 	&gt;
-	&lt;a href=&#34;https://img2023.cnblogs.com/blog/2418880/202311/2418880-20231110143310981-405864744.png&#34; &gt;
-		&lt;img src=&#34;https://img2023.cnblogs.com/blog/2418880/202311/2418880-20231110143310981-405864744.png&#34;
+	&lt;a href=&#34;https://s11.ax1x.com/2023/08/25/pPtRqKA.png&#34; &gt;
+		&lt;img src=&#34;https://s11.ax1x.com/2023/08/25/pPtRqKA.png&#34;
 			
 			
 			
 			loading=&#34;lazy&#34;
-			alt=&#34;image&#34;&gt;
+			alt=&#34;pPtRqKA.png&#34;&gt;
 	&lt;/a&gt;
 	
-	&lt;figcaption&gt;image&lt;/figcaption&gt;
+	&lt;figcaption&gt;pPtRqKA.png&lt;/figcaption&gt;
 	
-&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;&lt;figure 
+&lt;/figure&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://imgse.com/i/pPtRvUf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;figure 
 	&gt;
-	&lt;a href=&#34;https://img2023.cnblogs.com/blog/2418880/202311/2418880-20231110143324104-970587668.png&#34; &gt;
-		&lt;img src=&#34;https://img2023.cnblogs.com/blog/2418880/202311/2418880-20231110143324104-970587668.png&#34;
+	&lt;a href=&#34;https://s11.ax1x.com/2023/08/25/pPtRvUf.png&#34; &gt;
+		&lt;img src=&#34;https://s11.ax1x.com/2023/08/25/pPtRvUf.png&#34;
 			
 			
 			
 			loading=&#34;lazy&#34;
-			alt=&#34;image&#34;&gt;
+			alt=&#34;pPtRvUf.png&#34;&gt;
 	&lt;/a&gt;
 	
-	&lt;figcaption&gt;image&lt;/figcaption&gt;
+	&lt;figcaption&gt;pPtRvUf.png&lt;/figcaption&gt;
 	
-&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;&lt;figure 
+&lt;/figure&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://imgse.com/i/pPtWp8g&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;figure 
 	&gt;
-	&lt;a href=&#34;https://img2023.cnblogs.com/blog/2418880/202311/2418880-20231110143335361-670396583.png&#34; &gt;
-		&lt;img src=&#34;https://img2023.cnblogs.com/blog/2418880/202311/2418880-20231110143335361-670396583.png&#34;
+	&lt;a href=&#34;https://s11.ax1x.com/2023/08/25/pPtWp8g.png&#34; &gt;
+		&lt;img src=&#34;https://s11.ax1x.com/2023/08/25/pPtWp8g.png&#34;
 			
 			
 			
 			loading=&#34;lazy&#34;
-			alt=&#34;image&#34;&gt;
+			alt=&#34;pPtWp8g.png&#34;&gt;
 	&lt;/a&gt;
 	
-	&lt;figcaption&gt;image&lt;/figcaption&gt;
+	&lt;figcaption&gt;pPtWp8g.png&lt;/figcaption&gt;
 	
-&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;&lt;figure 
+&lt;/figure&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://imgse.com/i/pPtfkSe&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;figure 
 	&gt;
-	&lt;a href=&#34;https://img2023.cnblogs.com/blog/2418880/202311/2418880-20231110143347993-1370860012.png&#34; &gt;
-		&lt;img src=&#34;https://img2023.cnblogs.com/blog/2418880/202311/2418880-20231110143347993-1370860012.png&#34;
+	&lt;a href=&#34;https://s11.ax1x.com/2023/08/25/pPtfkSe.png&#34; &gt;
+		&lt;img src=&#34;https://s11.ax1x.com/2023/08/25/pPtfkSe.png&#34;
 			
 			
 			
 			loading=&#34;lazy&#34;
-			alt=&#34;image&#34;&gt;
+			alt=&#34;pPtfkSe.png&#34;&gt;
 	&lt;/a&gt;
 	
-	&lt;figcaption&gt;image&lt;/figcaption&gt;
+	&lt;figcaption&gt;pPtfkSe.png&lt;/figcaption&gt;
 	
-&lt;/figure&gt;&lt;/p&gt;
+&lt;/figure&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;选择维护好的脚本&lt;/p&gt;
 &lt;p&gt;&lt;figure 
 	&gt;
-	&lt;a href=&#34;https://img2023.cnblogs.com/blog/2418880/202311/2418880-20231110143407119-1662317485.png&#34; &gt;
-		&lt;img src=&#34;https://img2023.cnblogs.com/blog/2418880/202311/2418880-20231110143407119-1662317485.png&#34;
+	&lt;a href=&#34;https://imgse.com/i/pPtfwfU&#34; &gt;
+		&lt;img src=&#34;https://imgse.com/i/pPtfwfU&#34;
 			
 			
 			
 			loading=&#34;lazy&#34;
-			alt=&#34;image&#34;&gt;
+			alt=&#34;pPtfwfU.png&#34;&gt;
 	&lt;/a&gt;
 	
-	&lt;figcaption&gt;image&lt;/figcaption&gt;
+	&lt;figcaption&gt;pPtfwfU.png&lt;/figcaption&gt;
 	
 &lt;/figure&gt;&lt;/p&gt;
 </description>
@@ -186,7 +218,7 @@
         <pubDate>Wed, 30 Aug 2023 00:00:00 +0000</pubDate>
         
         <guid>https://meowxue.github.io/p/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/</guid>
-        <description>&lt;img src="https://api.r10086.com/樱道随机图片api接口.php?图片系列=动漫综合1&amp;6" alt="Featured image of post Linux服务器中Oracle数据库定时备份" /&gt;&lt;h1 id=&#34;概述&#34;&gt;概述&lt;/h1&gt;
+        <description>&lt;h1 id=&#34;概述&#34;&gt;概述&lt;/h1&gt;
 &lt;p&gt;大多数的linux发行版都默认安装了corn服务和crontab工具。cron服务是一个用于执行定时任务的后台服务，而crontab是用于编辑和管理用户的定时任务的命令行工具。通过crontab工具，用户可以添加、编辑、删除定时任务的执行时间和要运行的命令或者脚本。&lt;/p&gt;
 &lt;p&gt;利用定时执行备份的shell脚本。&lt;/p&gt;
 &lt;h1 id=&#34;shell脚本&#34;&gt;shell脚本&lt;/h1&gt;
@@ -297,7 +329,7 @@ crontab [-u &amp;lt;用户名称&amp;gt;][配置文件] 或 crontab { -l | -r | 
         <pubDate>Thu, 13 Oct 2022 00:00:00 +0000</pubDate>
         
         <guid>https://meowxue.github.io/p/%E7%94%A8sqlserver%E5%AE%98%E6%96%B9%E9%A9%B1%E5%8A%A8%E5%8C%85%E8%B0%83%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9D%91/</guid>
-        <description>&lt;img src="https://api.r10086.com/樱道随机图片api接口.php?图片系列=动漫综合1&amp;3" alt="Featured image of post 用sqlserver官方驱动包调用存储过程遇到的一个坑" /&gt;&lt;p&gt;和外部系统做对接，对方提供了一个存储过程，对方为sqlserver数据库，我方为oracle数据库。
+        <description>&lt;p&gt;和外部系统做对接，对方提供了一个存储过程，对方为sqlserver数据库，我方为oracle数据库。
 需求简单来说就是调用对方的存储过程获得结果，转储到我方库，后续在对数据进行处理。&lt;/p&gt;
 &lt;p&gt;我写了个代码片段做测试，用jdbc来调用对方的存储过程，可是在调用后就直接报错了，错误信息如下&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;com.microsoft.sqlserver.jdbc.SQLServerException: 该语句没有返回结果集
@@ -359,7 +391,7 @@ crontab [-u &amp;lt;用户名称&amp;gt;][配置文件] 或 crontab { -l | -r | 
         <pubDate>Fri, 27 May 2022 00:00:00 +0000</pubDate>
         
         <guid>https://meowxue.github.io/p/linux%E4%B8%AD%E5%AE%89%E8%A3%85nvm/</guid>
-        <description>&lt;img src="https://api.r10086.com/樱道随机图片api接口.php?图片系列=动漫综合1&amp;4" alt="Featured image of post Linux中安装nvm" /&gt;&lt;p&gt;NVM 是一个非常方便的node包管理工具，可以实现在NodeJS 各个不同版本之间自由的进行切换。
+        <description>&lt;p&gt;NVM 是一个非常方便的node包管理工具，可以实现在NodeJS 各个不同版本之间自由的进行切换。
  &lt;/p&gt;
 &lt;h2 id=&#34;1下载nvm安装包&#34;&gt;1.下载nvm安装包&lt;/h2&gt;
 &lt;p&gt;官网地址： &lt;a class=&#34;link&#34; href=&#34;https://github.com/nvm-sh/nvm&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;

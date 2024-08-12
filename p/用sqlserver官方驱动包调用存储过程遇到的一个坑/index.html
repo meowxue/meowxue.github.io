@@ -21,7 +21,7 @@ com.microsoft.sqlserver.jdbc.SQLServerException: 该语句没有返回结果集 
 import java.sql.CallableStatement; import java.sql.Connection; import java.sql.DriverManager; import java.sql.ResultSet; import java.sql.Statement; import java.text.SimpleDateFormat; import java.util.ArrayList; import java.util.Calendar; import java.util.Date; import java.util.HashMap; import java.util.List; import java.util.Map; public class Test { final static String SERVERURL = &amp;#34;jdbc:jtds:sqlserver://127.0.0.1:1433;DatabaseName=XXX&amp;#34;; final static String SERVERDriver = &amp;#34;net.sourceforge.jtds.jdbc.Driver&amp;#34;; final static String SERVERUSERNAME = &amp;#34;username&amp;#34;; final static String SERVERPASSWORD = &amp;#34;password&amp;#34;; public static void main(String[] args) { try { //调用存储过程 Class.'>
 <meta property='og:url' content='https://meowxue.github.io/p/%E7%94%A8sqlserver%E5%AE%98%E6%96%B9%E9%A9%B1%E5%8A%A8%E5%8C%85%E8%B0%83%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9D%91/'>
 <meta property='og:site_name' content='苏格拉'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='数据库' /><meta property='article:tag' content='sqlserver' /><meta property='article:published_time' content='2022-10-13T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2022-10-13T00:00:00&#43;00:00'/><meta property='og:image' content='https://api.r10086.com/樱道随机图片api接口.php?图片系列=动漫综合1&amp;3' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='数据库' /><meta property='article:tag' content='sqlserver' /><meta property='article:published_time' content='2022-10-13T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2022-10-13T00:00:00&#43;00:00'/>
 <meta name="twitter:title" content="用sqlserver官方驱动包调用存储过程遇到的一个坑">
 <meta name="twitter:description" content="和外部系统做对接，对方提供了一个存储过程，对方为sqlserver数据库，我方为oracle数据库。 需求简单来说就是调用对方的存储过程获得结果，转储到我方库，后续在对数据进行处理。
 我写了个代码片段做测试，用jdbc来调用对方的存储过程，可是在调用后就直接报错了，错误信息如下
@@ -29,8 +29,7 @@ com.microsoft.sqlserver.jdbc.SQLServerException: 该语句没有返回结果集 
 疯狂找资料，找帖子。最后终于是找到了。
 解决方法：
 换驱动包。对方数据库是SQL server2008，我用的是 sqljdbc4-4.0 。直接换了第三方开源的SQL Server数据库的JDBC驱动程序 jtds1.2。问题解决，调用存储过程的时候不再出错。 在存储过程首行添加 set nocount on （这个我没实验，因为存储过程没在我手里，操作不到） 最后记录一段jdbc调用存储结构的代码，一个参数，返回结果集
-import java.sql.CallableStatement; import java.sql.Connection; import java.sql.DriverManager; import java.sql.ResultSet; import java.sql.Statement; import java.text.SimpleDateFormat; import java.util.ArrayList; import java.util.Calendar; import java.util.Date; import java.util.HashMap; import java.util.List; import java.util.Map; public class Test { final static String SERVERURL = &amp;#34;jdbc:jtds:sqlserver://127.0.0.1:1433;DatabaseName=XXX&amp;#34;; final static String SERVERDriver = &amp;#34;net.sourceforge.jtds.jdbc.Driver&amp;#34;; final static String SERVERUSERNAME = &amp;#34;username&amp;#34;; final static String SERVERPASSWORD = &amp;#34;password&amp;#34;; public static void main(String[] args) { try { //调用存储过程 Class."><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://api.r10086.com/樱道随机图片api接口.php?图片系列=动漫综合1&amp;3' />
+import java.sql.CallableStatement; import java.sql.Connection; import java.sql.DriverManager; import java.sql.ResultSet; import java.sql.Statement; import java.text.SimpleDateFormat; import java.util.ArrayList; import java.util.Calendar; import java.util.Date; import java.util.HashMap; import java.util.List; import java.util.Map; public class Test { final static String SERVERURL = &amp;#34;jdbc:jtds:sqlserver://127.0.0.1:1433;DatabaseName=XXX&amp;#34;; final static String SERVERDriver = &amp;#34;net.sourceforge.jtds.jdbc.Driver&amp;#34;; final static String SERVERUSERNAME = &amp;#34;username&amp;#34;; final static String SERVERPASSWORD = &amp;#34;password&amp;#34;; public static void main(String[] args) { try { //调用存储过程 Class.">
   
 
 
@@ -245,16 +244,8 @@ import java.sql.CallableStatement; import java.sql.Connection; import java.sql.D
 
     
 <main class="main full-width">
-    <article class="has-image main-article">
+    <article class="main-article">
     <header class="article-header">
-        <div class="article-image">
-            <a href="/p/%E7%94%A8sqlserver%E5%AE%98%E6%96%B9%E9%A9%B1%E5%8A%A8%E5%8C%85%E8%B0%83%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9D%91/">
-                
-                    <img src="https://api.r10086.com/%e6%a8%b1%e9%81%93%e9%9a%8f%e6%9c%ba%e5%9b%be%e7%89%87api%e6%8e%a5%e5%8f%a3.php?%e5%9b%be%e7%89%87%e7%b3%bb%e5%88%97=%e5%8a%a8%e6%bc%ab%e7%bb%bc%e5%90%881&amp;3" loading="lazy" alt="Featured image of post 用sqlserver官方驱动包调用存储过程遇到的一个坑" />
-                
-            </a>
-        </div>
-    
 
     <div class="article-details">
     
@@ -401,53 +392,30 @@ import java.sql.CallableStatement; import java.sql.Connection; import java.sql.D
     <aside class="related-contents--wrapper">
     
     
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/p/maven%E5%AE%89%E8%A3%85%E6%9C%AC%E5%9C%B0%E7%9A%84jar%E5%8C%85%E5%88%B0%E4%BB%93%E5%BA%93/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">maven安装本地的jar包到仓库</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
 </aside>
 
      
     
         
-    <div class="disqus-container">
-    <div id="disqus_thread"></div>
-<script>
-    window.disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-</div>
-
-<style>
-    .disqus-container {
-        background-color: var(--card-background);
-        border-radius: var(--card-border-radius);
-        box-shadow: var(--shadow-l1);
-        padding: var(--card-padding);
-    }
-</style>
-
-<script>
-    window.addEventListener('onColorSchemeChange', (e) => {
-        if (DISQUS) {
-            DISQUS.reset({
-                reload: true
-            });
-        }
-    })
-</script>
-
     
 
     <footer class="site-footer">

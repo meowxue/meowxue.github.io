@@ -6,8 +6,15 @@
     <description>Recent content in Java on 苏格拉</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 13 Oct 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 10 Aug 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://meowxue.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>maven安装本地的jar包到仓库</title>
+      <link>https://meowxue.github.io/p/maven%E5%AE%89%E8%A3%85%E6%9C%AC%E5%9C%B0%E7%9A%84jar%E5%8C%85%E5%88%B0%E4%BB%93%E5%BA%93/</link>
+      <pubDate>Sat, 10 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>https://meowxue.github.io/p/maven%E5%AE%89%E8%A3%85%E6%9C%AC%E5%9C%B0%E7%9A%84jar%E5%8C%85%E5%88%B0%E4%BB%93%E5%BA%93/</guid>
+      <description>项目中有用到人大金仓的数据库，但是这个包，在maven仓库中找不到，所以需要手动安装到仓库中。在此记录如何将下载好的jar包安装到仓库中。&#xA;命令格式如下:&#xA;mvn -s /home/meowxue/Dev/environment/apache-maven-3.9.8/conf/settings-private.xml install:install-file -DgroupId=com.kingbase8 -DartifactId=kingbase8 -Dversion=8.6.0 -Dfile=/home/meowxue/下载/kingbase8/kingbase8/8.6.0/kingbase8-8.6.0.jar -Dpackaging=jar -DgeneratePom=true 说明：&#xA;-s：指定settings.xml文件路径&#xD;-DgroupId：jar包所在组，对应pom.xml中的groupId&#xD;-DartifactId：jar包名称，对应pom.xml中的artifactId&#xD;-Dversion：jar包版本，对应pom.xml中的version&#xD;-Dfile：jar包路径&#xD;-Dpackaging：jar包类型（一般都为jar）&#xD;-DgeneratePom=true：是否生成对应的pom.xml文件 </description>
+    </item>
     <item>
       <title>用sqlserver官方驱动包调用存储过程遇到的一个坑</title>
       <link>https://meowxue.github.io/p/%E7%94%A8sqlserver%E5%AE%98%E6%96%B9%E9%A9%B1%E5%8A%A8%E5%8C%85%E8%B0%83%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9D%91/</link>

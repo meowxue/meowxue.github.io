@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='事情是这样的，我用java写了个运维的程序，在服务器上定时给我发送程序的运行状态和日志。写好后放到服务器上做了一个定时任务，通过windows自带的计划任务来执行bat脚本。但是我发现双击bat脚本执行是没有问题的，但是在计划任务执行的时候就会失败，运行结果为0x1。
-报错原因：程序和脚本中的bat脚本带有目录结构，但是起始的哪里没有配置批处理脚本所在目录路径
-计划任务编辑操作.png 在红框处配置bat脚本文件的路径就可以执行成功了。'><title>Windows计划任务执行结果为0x1</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='项目中有用到人大金仓的数据库，但是这个包，在maven仓库中找不到，所以需要手动安装到仓库中。在此记录如何将下载好的jar包安装到仓库中。
+命令格式如下:
+mvn -s /home/meowxue/Dev/environment/apache-maven-3.9.8/conf/settings-private.xml install:install-file -DgroupId=com.kingbase8 -DartifactId=kingbase8 -Dversion=8.6.0 -Dfile=/home/meowxue/下载/kingbase8/kingbase8/8.6.0/kingbase8-8.6.0.jar -Dpackaging=jar -DgeneratePom=true 说明：
+-s：指定settings.xml文件路径-DgroupId：jar包所在组，对应pom.xml中的groupId-DartifactId：jar包名称，对应pom.xml中的artifactId-Dversion：jar包版本，对应pom.xml中的version-Dfile：jar包路径-Dpackaging：jar包类型（一般都为jar）-DgeneratePom=true：是否生成对应的pom.xml文件 '><title>maven安装本地的jar包到仓库</title>
 
-<link rel='canonical' href='https://meowxue.github.io/p/windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C%E4%B8%BA0x1/'>
+<link rel='canonical' href='https://meowxue.github.io/p/maven%E5%AE%89%E8%A3%85%E6%9C%AC%E5%9C%B0%E7%9A%84jar%E5%8C%85%E5%88%B0%E4%BB%93%E5%BA%93/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Windows计划任务执行结果为0x1'>
-<meta property='og:description' content='事情是这样的，我用java写了个运维的程序，在服务器上定时给我发送程序的运行状态和日志。写好后放到服务器上做了一个定时任务，通过windows自带的计划任务来执行bat脚本。但是我发现双击bat脚本执行是没有问题的，但是在计划任务执行的时候就会失败，运行结果为0x1。
-报错原因：程序和脚本中的bat脚本带有目录结构，但是起始的哪里没有配置批处理脚本所在目录路径
-计划任务编辑操作.png 在红框处配置bat脚本文件的路径就可以执行成功了。'>
-<meta property='og:url' content='https://meowxue.github.io/p/windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C%E4%B8%BA0x1/'>
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='maven安装本地的jar包到仓库'>
+<meta property='og:description' content='项目中有用到人大金仓的数据库，但是这个包，在maven仓库中找不到，所以需要手动安装到仓库中。在此记录如何将下载好的jar包安装到仓库中。
+命令格式如下:
+mvn -s /home/meowxue/Dev/environment/apache-maven-3.9.8/conf/settings-private.xml install:install-file -DgroupId=com.kingbase8 -DartifactId=kingbase8 -Dversion=8.6.0 -Dfile=/home/meowxue/下载/kingbase8/kingbase8/8.6.0/kingbase8-8.6.0.jar -Dpackaging=jar -DgeneratePom=true 说明：
+-s：指定settings.xml文件路径-DgroupId：jar包所在组，对应pom.xml中的groupId-DartifactId：jar包名称，对应pom.xml中的artifactId-Dversion：jar包版本，对应pom.xml中的version-Dfile：jar包路径-Dpackaging：jar包类型（一般都为jar）-DgeneratePom=true：是否生成对应的pom.xml文件 '>
+<meta property='og:url' content='https://meowxue.github.io/p/maven%E5%AE%89%E8%A3%85%E6%9C%AC%E5%9C%B0%E7%9A%84jar%E5%8C%85%E5%88%B0%E4%BB%93%E5%BA%93/'>
 <meta property='og:site_name' content='苏格拉'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='windows' /><meta property='article:tag' content='运维' /><meta property='article:published_time' content='2024-06-05T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-06-05T00:00:00&#43;00:00'/>
-<meta name="twitter:title" content="Windows计划任务执行结果为0x1">
-<meta name="twitter:description" content="事情是这样的，我用java写了个运维的程序，在服务器上定时给我发送程序的运行状态和日志。写好后放到服务器上做了一个定时任务，通过windows自带的计划任务来执行bat脚本。但是我发现双击bat脚本执行是没有问题的，但是在计划任务执行的时候就会失败，运行结果为0x1。
-报错原因：程序和脚本中的bat脚本带有目录结构，但是起始的哪里没有配置批处理脚本所在目录路径
-计划任务编辑操作.png 在红框处配置bat脚本文件的路径就可以执行成功了。">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='maven' /><meta property='article:published_time' content='2024-08-10T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-08-10T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="maven安装本地的jar包到仓库">
+<meta name="twitter:description" content="项目中有用到人大金仓的数据库，但是这个包，在maven仓库中找不到，所以需要手动安装到仓库中。在此记录如何将下载好的jar包安装到仓库中。
+命令格式如下:
+mvn -s /home/meowxue/Dev/environment/apache-maven-3.9.8/conf/settings-private.xml install:install-file -DgroupId=com.kingbase8 -DartifactId=kingbase8 -Dversion=8.6.0 -Dfile=/home/meowxue/下载/kingbase8/kingbase8/8.6.0/kingbase8-8.6.0.jar -Dpackaging=jar -DgeneratePom=true 说明：
+-s：指定settings.xml文件路径-DgroupId：jar包所在组，对应pom.xml中的groupId-DartifactId：jar包名称，对应pom.xml中的artifactId-Dversion：jar包版本，对应pom.xml中的version-Dfile：jar包路径-Dpackaging：jar包类型（一般都为jar）-DgeneratePom=true：是否生成对应的pom.xml文件 ">
   
 
 
@@ -239,15 +242,15 @@
     
     <header class="article-category">
         
-            <a href="/categories/windows/" style="background-color: #2a9d8f; color: #fff;">
-                Windows
+            <a href="/categories/java/" style="background-color: #2a9d8f; color: #fff;">
+                Java
             </a>
         
     </header>
     
 
     <h2 class="article-title">
-        <a href="/p/windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C%E4%B8%BA0x1/">Windows计划任务执行结果为0x1</a>
+        <a href="/p/maven%E5%AE%89%E8%A3%85%E6%9C%AC%E5%9C%B0%E7%9A%84jar%E5%8C%85%E5%88%B0%E4%BB%93%E5%BA%93/">maven安装本地的jar包到仓库</a>
     </h2>
 
     
@@ -265,7 +268,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Jun 05, 2024</time>
+                <time class="article-time--published">Aug 10, 2024</time>
             </div>
         
 
@@ -290,24 +293,23 @@
 </header>
 
     <section class="article-content">
-    <p>事情是这样的，我用java写了个运维的程序，在服务器上定时给我发送程序的运行状态和日志。写好后放到服务器上做了一个定时任务，通过windows自带的计划任务来执行bat脚本。但是我发现双击bat脚本执行是没有问题的，但是在计划任务执行的时候就会失败，运行结果为0x1。</p>
-<p>报错原因：程序和脚本中的bat脚本带有目录结构，但是起始的哪里没有配置批处理脚本所在目录路径</p>
-<p><a class="link" href="https://imgse.com/i/pkJHoQS"  target="_blank" rel="noopener"
-    ><figure 
-	>
-	<a href="https://s21.ax1x.com/2024/06/05/pkJHoQS.png" >
-		<img src="https://s21.ax1x.com/2024/06/05/pkJHoQS.png"
-			
-			
-			
-			loading="lazy"
-			alt="计划任务编辑操作.png">
-	</a>
-	
-	<figcaption>计划任务编辑操作.png</figcaption>
-	
-</figure></a></p>
-<p>在红框处配置bat脚本文件的路径就可以执行成功了。</p>
+    <p>项目中有用到人大金仓的数据库，但是这个包，在maven仓库中找不到，所以需要手动安装到仓库中。在此记录如何将下载好的jar包安装到仓库中。</p>
+<p>命令格式如下:</p>
+<pre tabindex="0"><code>mvn -s /home/meowxue/Dev/environment/apache-maven-3.9.8/conf/settings-private.xml install:install-file -DgroupId=com.kingbase8 -DartifactId=kingbase8 -Dversion=8.6.0 -Dfile=/home/meowxue/下载/kingbase8/kingbase8/8.6.0/kingbase8-8.6.0.jar -Dpackaging=jar -DgeneratePom=true
+</code></pre><p>说明：</p>
+<pre><code>-s：指定settings.xml文件路径
+
+-DgroupId：jar包所在组，对应pom.xml中的groupId
+
+-DartifactId：jar包名称，对应pom.xml中的artifactId
+
+-Dversion：jar包版本，对应pom.xml中的version
+
+-Dfile：jar包路径
+
+-Dpackaging：jar包类型（一般都为jar）
+
+-DgeneratePom=true：是否生成对应的pom.xml文件</code></pre>
 
 </section>
 
@@ -316,9 +318,7 @@
     
     <section class="article-tags">
         
-            <a href="/tags/windows/">Windows</a>
-        
-            <a href="/tags/%E8%BF%90%E7%BB%B4/">运维</a>
+            <a href="/tags/maven/">Maven</a>
         
     </section>
 
@@ -350,12 +350,12 @@
                 
                     
 <article class="">
-    <a href="/p/windows%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/">
+    <a href="/p/%E7%94%A8sqlserver%E5%AE%98%E6%96%B9%E9%A9%B1%E5%8A%A8%E5%8C%85%E8%B0%83%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9D%91/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Windows服务器中Oracle数据库定时备份</h2>
+            <h2 class="article-title">用sqlserver官方驱动包调用存储过程遇到的一个坑</h2>
         </div>
     </a>
 </article>
