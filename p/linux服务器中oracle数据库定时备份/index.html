@@ -1,30 +1,39 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
-    <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='概述 大多数的linux发行版都默认安装了corn服务和crontab工具。cron服务是一个用于执行定时任务的后台服务，而crontab是用于编辑和管理用户的定时任务的命令行工具。通过crontab工具，用户可以添加、编辑、删除定时任务的执行时间和要运行的命令或者脚本。
-利用定时执行备份的shell脚本。
-'><title>Linux服务器中Oracle数据库定时备份</title>
+<html lang="zh-cn" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="概述 大多数的linux发行版都默认安装了corn服务和crontab工具。cron服务是一个用于执行定时任务的后台服务，而crontab是用于编辑和管理用户的定时任务的命令行工具。通过crontab工具，用户可以添加、编辑、删除定时任务的执行时间和要运行的命令或者脚本。\n利用定时执行备份的shell脚本。\n">
+<title>Linux服务器中Oracle数据库定时备份</title>
 
-<link rel='canonical' href='https://meowxue.github.io/p/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/'>
+<link rel='canonical' href='//localhost:1313/p/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Linux服务器中Oracle数据库定时备份'>
-<meta property='og:description' content='概述 大多数的linux发行版都默认安装了corn服务和crontab工具。cron服务是一个用于执行定时任务的后台服务，而crontab是用于编辑和管理用户的定时任务的命令行工具。通过crontab工具，用户可以添加、编辑、删除定时任务的执行时间和要运行的命令或者脚本。
-利用定时执行备份的shell脚本。
-'>
-<meta property='og:url' content='https://meowxue.github.io/p/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/'>
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Linux服务器中Oracle数据库定时备份">
+<meta property='og:description' content="概述 大多数的linux发行版都默认安装了corn服务和crontab工具。cron服务是一个用于执行定时任务的后台服务，而crontab是用于编辑和管理用户的定时任务的命令行工具。通过crontab工具，用户可以添加、编辑、删除定时任务的执行时间和要运行的命令或者脚本。\n利用定时执行备份的shell脚本。\n">
+<meta property='og:url' content='//localhost:1313/p/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/'>
 <meta property='og:site_name' content='苏格拉'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Linux' /><meta property='article:tag' content='运维' /><meta property='article:tag' content='oracle' /><meta property='article:published_time' content='2023-08-30T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2023-08-30T00:00:00&#43;00:00'/>
 <meta name="twitter:title" content="Linux服务器中Oracle数据库定时备份">
-<meta name="twitter:description" content="概述 大多数的linux发行版都默认安装了corn服务和crontab工具。cron服务是一个用于执行定时任务的后台服务，而crontab是用于编辑和管理用户的定时任务的命令行工具。通过crontab工具，用户可以添加、编辑、删除定时任务的执行时间和要运行的命令或者脚本。
-利用定时执行备份的shell脚本。
-">
-  
+<meta name="twitter:description" content="概述 大多数的linux发行版都默认安装了corn服务和crontab工具。cron服务是一个用于执行定时任务的后台服务，而crontab是用于编辑和管理用户的定时任务的命令行工具。通过crontab工具，用户可以添加、编辑、删除定时任务的执行时间和要运行的命令或者脚本。\n利用定时执行备份的shell脚本。\n"><style>
+     
+    :root {
+        --article-font-family: "Merriweather", var(--base-font-family);
+    }
+</style>
 
-
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap";
+    
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+    
+        document.head.appendChild(customFont);
+    }());
+</script>
     </head>
     <body class="
-    article-page has-toc
-">
+    article-page
+    ">
     <script>
         (function() {
             const colorSchemeKey = 'StackColorScheme';
@@ -47,26 +56,229 @@
         }
     })();
 </script>
-<div class="container main-container flex 
-    
-        extended
-    
-">
-    
-        <div id="article-toolbar">
-            <a href="/" class="back-home">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <polyline points="15 6 9 12 15 18" />
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_bbb4c3ca8f1815fe.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">😜️</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="//localhost:1313/">苏格拉</a></h1>
+            <h2 class="site-description">你是谁？” “苏格拉” “…底？ “就苏格拉。没有底。”</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='mailto:meow_xue@163.com'
+                        target="_blank"
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
+  <path d="M3 7l9 6l9 -6" />
+</svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/meowxue'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
 </svg>
 
 
 
-                <span>返回</span>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
             </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
         </div>
-    
-<main class="main full-width">
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#注意的点和相关的问题">注意的点和相关的问题</a>
+      <ol>
+        <li><a href="#1为什么要再次设置环境变量">1.为什么要再次设置环境变量?</a></li>
+        <li><a href="#2数据库目录对象">2.数据库目录对象</a></li>
+        <li><a href="#3脚本完成后">3.脚本完成后</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
     <article class="main-article">
     <header class="article-header">
 
@@ -81,12 +293,17 @@
     </header>
     
 
-    <h2 class="article-title">
-        <a href="/p/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/">Linux服务器中Oracle数据库定时备份</a>
-    </h2>
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/">Linux服务器中Oracle数据库定时备份</a>
+        </h2>
+    
+        
+    </div>
 
     
-
+    
+    
     
     <footer class="article-time">
         
@@ -115,21 +332,61 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 2 分钟
+                    阅读时长: 3 分钟
                 </time>
             </div>
         
     </footer>
     
+
+    
 </div>
+
 </header>
 
     <section class="article-content">
-    <h1 id="概述">概述</h1>
-<p>大多数的linux发行版都默认安装了corn服务和crontab工具。cron服务是一个用于执行定时任务的后台服务，而crontab是用于编辑和管理用户的定时任务的命令行工具。通过crontab工具，用户可以添加、编辑、删除定时任务的执行时间和要运行的命令或者脚本。</p>
+    
+    
+    <h1 id="概述">概述
+</h1><p>大多数的linux发行版都默认安装了corn服务和crontab工具。cron服务是一个用于执行定时任务的后台服务，而crontab是用于编辑和管理用户的定时任务的命令行工具。通过crontab工具，用户可以添加、编辑、删除定时任务的执行时间和要运行的命令或者脚本。</p>
 <p>利用定时执行备份的shell脚本。</p>
-<h1 id="shell脚本">shell脚本</h1>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+<h1 id="shell脚本">shell脚本
+</h1><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
 </span></span><span class="line"><span class="cl"><span class="c1">#配置数据库的环境变量</span>
 </span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">ORACLE_HOME</span><span class="o">=</span>/home/oracle/app/oracle/product/11.2.0/db_1/
@@ -160,74 +417,190 @@
 </span></span><span class="line"><span class="cl"><span class="c1">#删除10天前的数据</span>
 </span></span><span class="line"><span class="cl">find <span class="si">${</span><span class="nv">BACKUP</span><span class="si">}</span> -atime +10 -name <span class="s2">&#34;*_back.dmp&#34;</span> -exec rm -ef <span class="o">{}</span> <span class="se">\;</span>
 </span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;备份完成&#34;</span>
-</span></span></code></pre></div><h2 id="注意的点和相关的问题">注意的点和相关的问题</h2>
-<h3 id="1为什么要再次设置环境变量">1.为什么要再次设置环境变量?</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#配置数据库的环境变量</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="注意的点和相关的问题">注意的点和相关的问题
+</h2><h3 id="1为什么要再次设置环境变量">1.为什么要再次设置环境变量?
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#配置数据库的环境变量</span>
 </span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">ORACLE_HOME</span><span class="o">=</span>/home/oracle/app/oracle/product/11.2.0/db_1/
 </span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$ORACLE_HOME</span>/bin:<span class="nv">$PATH</span>
-</span></span></code></pre></div><p>cron运行的环境和正常的shell执行环境不同。在正常情况下直接执行备份的shell脚本 expdp 命令可以被正确识别，但放到 crontab 中，expdp 命令将会出错，错误信息大概如下：</p>
-<pre tabindex="0"><code>UDE-00013: Message 13 not found; No message file for product=RDBMS, facility=UDE
-UDE-00019: You may need to set ORACLE_HOME to your Oracle software directory
-</code></pre><p>export 将变量设置为环境变量，并且在当前shell会话及子进程中可见和可访问。</p>
-<h3 id="2数据库目录对象">2.数据库目录对象</h3>
-<p>此处为oracle的文件目录对象,类似于将路径起个变量名，并将这种对应关系保存在数据库中。</p>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>cron运行的环境和正常的shell执行环境不同。在正常情况下直接执行备份的shell脚本 expdp 命令可以被正确识别，但放到 crontab 中，expdp 命令将会出错，错误信息大概如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">UDE-00013: Message 13 not found; No message file for product=RDBMS, facility=UDE
+</span></span><span class="line"><span class="cl">UDE-00019: You may need to set ORACLE_HOME to your Oracle software directory
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>export 将变量设置为环境变量，并且在当前shell会话及子进程中可见和可访问。</p>
+<h3 id="2数据库目录对象">2.数据库目录对象
+</h3><p>此处为oracle的文件目录对象,类似于将路径起个变量名，并将这种对应关系保存在数据库中。</p>
 <p>查询所有文件目录</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="n">directory_name</span><span class="p">,</span><span class="w"> </span><span class="n">directory_path</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">all_directories</span><span class="p">;</span><span class="w">
-</span></span></span></code></pre></div><p>查询结果中的 directory_path 要与 脚本中的 BACKUP 路径一致。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="n">directory_name</span><span class="p">,</span><span class="w"> </span><span class="n">directory_path</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">all_directories</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>查询结果中的 directory_path 要与 脚本中的 BACKUP 路径一致。</p>
 <p>创建文件目录</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="n">DIRECTORY</span><span class="w"> </span><span class="n">hrpbackup</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s1">&#39;备份文件要存放的路径&#39;</span><span class="p">;</span><span class="w">
-</span></span></span></code></pre></div><p>授予公共用户对目录（directory）的读取和写入权限。（非必须）</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">grant</span><span class="w"> </span><span class="k">read</span><span class="p">,</span><span class="k">write</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">directory</span><span class="w"> </span><span class="err">目录对象</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">public</span><span class="p">;</span><span class="w">
-</span></span></span></code></pre></div><h3 id="3脚本完成后">3.脚本完成后</h3>
-<p>给脚本添加可执行权限</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod +x 备份.sh
-</span></span></code></pre></div><p>创建的目录 BACKUP 也需要设置权限</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod <span class="m">777</span> /usr/local/DBback
-</span></span></code></pre></div><h1 id="定时">定时</h1>
-<p>查询当前所有的定时任务</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">crontab -l
-</span></span></code></pre></div><p>编辑定时任务</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">crontab -e
-</span></span></code></pre></div><p>crontab 相关命令</p>
-<pre tabindex="0"><code>(1) 语法
-crontab [-u &lt;用户名称&gt;][配置文件] 或 crontab { -l | -r | -e }
--u   #&lt;用户名称&gt; 是指设定指定&lt;用户名称&gt;的定时任务，这个前提是你必须要有其权限(比如说是 root)才能够指定他人的时程表。如果不使用 -u user 的话，就是表示设定自己的定时任务。
--l 　#列出该用户的定时任务设置。
--r 　#删除该用户的定时任务设置。
--e 　#编辑该用户的定时任务设置。
-(2) 命令时间格式：
-*     * 　  *　  *　  *　　command
-分　  时　  日　  月　 周　  命令
-
-第1列表示分钟1～59 每分钟用*或者 */1表示
-第2列表示小时1～23（0表示0点）
-第3列表示日期1～31
-第4列表示月份1～12
-第5列标识号星期0～6（0表示星期天）
-第6列要运行的命令
-(3)一些Crontab定时任务例子：
-30 21 * * * /usr/local/etc/rc.d/lighttpd restart  #每晚的21:30 重启apache
-45 4 1,10,22 * * /usr/local/etc/rc.d/lighttpd restart  #每月1、10、22日的4 : 45重启apache
-10 1 * * 6,0 /usr/local/etc/rc.d/lighttpd restart  #每周六、周日的1 : 10重启apache
-0,30 18-23 * * * /usr/local/etc/rc.d/lighttpd restart  #每天18 : 00至23 : 00之间每隔30分钟重启apache
-0 23 * * 6 /usr/local/etc/rc.d/lighttpd restart  #每星期六的11 : 00 pm重启apache
-* 23-7/1 * * * /usr/local/etc/rc.d/lighttpd restart  #晚上11点到早上7点之间，每隔一小时重启apache
-* */1 * * * /usr/local/etc/rc.d/lighttpd restart  #每一小时重启apache
-0 11 4 * mon-wed /usr/local/etc/rc.d/lighttpd restart  #每月的4号与每周一到周三的11点重启apache
-0 4 1 jan * /usr/local/etc/rc.d/lighttpd restart  #一月一号的4点重启apache
- 
-*/30 * * * * /usr/sbin/ntpdate cn.pool.ntp.org  #每半小时同步一下时间
-0 */2 * * * /sbin/service httpd restart  #每两个小时重启一次apache 
-50 7 * * * /sbin/service sshd start  #每天7：50开启ssh服务 
-50 22 * * * /sbin/service sshd stop  #每天22：50关闭ssh服务 
-0 0 1,15 * * fsck /home  #每月1号和15号检查/home 磁盘 
-1 * * * * /home/bruce/backup  #每小时的第一分执行 /home/bruce/backup这个文件 
-00 03 * * 1-5 find /home &#34;*.xxx&#34; -mtime +4 -exec rm {} \;  #每周一至周五3点钟，在目录/home中，查找文件名为*.xxx的文件，并删除4天前的文件。
-30 6 */10 * * ls  #每月的1、11、21、31日是的6：30执行一次ls命令
-</code></pre><p>例如：每天晚上11点30分执行定时备份脚本 /usr/local/backup.sh</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="n">DIRECTORY</span><span class="w"> </span><span class="n">hrpbackup</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s1">&#39;备份文件要存放的路径&#39;</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>授予公共用户对目录（directory）的读取和写入权限。（非必须）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">grant</span><span class="w"> </span><span class="k">read</span><span class="p">,</span><span class="k">write</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">directory</span><span class="w"> </span><span class="err">目录对象</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">public</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="3脚本完成后">3.脚本完成后
+</h3><p>给脚本添加可执行权限</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod +x 备份.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>创建的目录 BACKUP 也需要设置权限</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod <span class="m">777</span> /usr/local/DBback
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="定时">定时
+</h1><p>查询当前所有的定时任务</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">crontab -l
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>编辑定时任务</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">crontab -e
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>crontab 相关命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">(1) 语法
+</span></span><span class="line"><span class="cl">crontab [-u &lt;用户名称&gt;][配置文件] 或 crontab { -l | -r | -e }
+</span></span><span class="line"><span class="cl">-u   #&lt;用户名称&gt; 是指设定指定&lt;用户名称&gt;的定时任务，这个前提是你必须要有其权限(比如说是 root)才能够指定他人的时程表。如果不使用 -u user 的话，就是表示设定自己的定时任务。
+</span></span><span class="line"><span class="cl">-l 　#列出该用户的定时任务设置。
+</span></span><span class="line"><span class="cl">-r 　#删除该用户的定时任务设置。
+</span></span><span class="line"><span class="cl">-e 　#编辑该用户的定时任务设置。
+</span></span><span class="line"><span class="cl">(2) 命令时间格式：
+</span></span><span class="line"><span class="cl">*     * 　  *　  *　  *　　command
+</span></span><span class="line"><span class="cl">分　  时　  日　  月　 周　  命令
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">第1列表示分钟1～59 每分钟用*或者 */1表示
+</span></span><span class="line"><span class="cl">第2列表示小时1～23（0表示0点）
+</span></span><span class="line"><span class="cl">第3列表示日期1～31
+</span></span><span class="line"><span class="cl">第4列表示月份1～12
+</span></span><span class="line"><span class="cl">第5列标识号星期0～6（0表示星期天）
+</span></span><span class="line"><span class="cl">第6列要运行的命令
+</span></span><span class="line"><span class="cl">(3)一些Crontab定时任务例子：
+</span></span><span class="line"><span class="cl">30 21 * * * /usr/local/etc/rc.d/lighttpd restart  #每晚的21:30 重启apache
+</span></span><span class="line"><span class="cl">45 4 1,10,22 * * /usr/local/etc/rc.d/lighttpd restart  #每月1、10、22日的4 : 45重启apache
+</span></span><span class="line"><span class="cl">10 1 * * 6,0 /usr/local/etc/rc.d/lighttpd restart  #每周六、周日的1 : 10重启apache
+</span></span><span class="line"><span class="cl">0,30 18-23 * * * /usr/local/etc/rc.d/lighttpd restart  #每天18 : 00至23 : 00之间每隔30分钟重启apache
+</span></span><span class="line"><span class="cl">0 23 * * 6 /usr/local/etc/rc.d/lighttpd restart  #每星期六的11 : 00 pm重启apache
+</span></span><span class="line"><span class="cl">* 23-7/1 * * * /usr/local/etc/rc.d/lighttpd restart  #晚上11点到早上7点之间，每隔一小时重启apache
+</span></span><span class="line"><span class="cl">* */1 * * * /usr/local/etc/rc.d/lighttpd restart  #每一小时重启apache
+</span></span><span class="line"><span class="cl">0 11 4 * mon-wed /usr/local/etc/rc.d/lighttpd restart  #每月的4号与每周一到周三的11点重启apache
+</span></span><span class="line"><span class="cl">0 4 1 jan * /usr/local/etc/rc.d/lighttpd restart  #一月一号的4点重启apache
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">*/30 * * * * /usr/sbin/ntpdate cn.pool.ntp.org  #每半小时同步一下时间
+</span></span><span class="line"><span class="cl">0 */2 * * * /sbin/service httpd restart  #每两个小时重启一次apache 
+</span></span><span class="line"><span class="cl">50 7 * * * /sbin/service sshd start  #每天7：50开启ssh服务 
+</span></span><span class="line"><span class="cl">50 22 * * * /sbin/service sshd stop  #每天22：50关闭ssh服务 
+</span></span><span class="line"><span class="cl">0 0 1,15 * * fsck /home  #每月1号和15号检查/home 磁盘 
+</span></span><span class="line"><span class="cl">1 * * * * /home/bruce/backup  #每小时的第一分执行 /home/bruce/backup这个文件 
+</span></span><span class="line"><span class="cl">00 03 * * 1-5 find /home &#34;*.xxx&#34; -mtime +4 -exec rm {} \;  #每周一至周五3点钟，在目录/home中，查找文件名为*.xxx的文件，并删除4天前的文件。
+</span></span><span class="line"><span class="cl">30 6 */10 * * ls  #每月的1、11、21、31日是的6：30执行一次ls命令
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>例如：每天晚上11点30分执行定时备份脚本 /usr/local/backup.sh</p>
 <p>路径要写全</p>
-<pre tabindex="0"><code>30 11 * * * /usr/local/backup.sh
-</code></pre><p>crontab在线工具 <a class="link" href="https://tool.lu/crontab"  target="_blank" rel="noopener"
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">30 11 * * * /usr/local/backup.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>crontab在线工具 <a class="link" href="https://tool.lu/crontab"  target="_blank" rel="noopener"
     >https://tool.lu/crontab</a></p>
 </section>
 
@@ -263,14 +636,16 @@ crontab [-u &lt;用户名称&gt;][配置文件] 或 crontab { -l | -r | -e }
     
 </article>
 
-    <aside class="related-contents--wrapper">
     
+
     
-        <h2 class="section-title">相关文章</h2>
-        <div class="related-contents">
-            <div class="flex article-list--tile">
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
                 
-                    
 <article class="">
     <a href="/p/linux%E4%B8%AD%E5%AE%89%E8%A3%85nvm/">
         
@@ -281,8 +656,9 @@ crontab [-u &lt;用户名称&gt;][配置文件] 或 crontab { -l | -r | -e }
         </div>
     </a>
 </article>
+
+            
                 
-                    
 <article class="">
     <a href="/p/windows%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/">
         
@@ -293,15 +669,57 @@ crontab [-u &lt;用户名称&gt;][配置文件] 或 crontab { -l | -r | -e }
         </div>
     </a>
 </article>
-                
-            </div>
+
+            
         </div>
-    
+    </div>
 </aside>
 
      
     
         
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
     
 
     <footer class="site-footer">
@@ -310,12 +728,12 @@ crontab [-u &lt;用户名称&gt;][配置文件] 或 crontab { -l | -r | -e }
         
             2020 - 
         
-        2024 苏格拉
+        2025 Example Person
     </section>
     
     <section class="powerby">
-         <br />
-        
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
     </section>
 </footer>
 
@@ -384,61 +802,27 @@ crontab [-u &lt;用户名称&gt;][配置文件] 或 crontab { -l | -r | -e }
 
 </div><script 
                 src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><script 
                 src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
-                defer="true"
+                defer
                 >
             </script><link 
                 rel="stylesheet" 
-                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
             ><link 
                 rel="stylesheet" 
-                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
             >
 
             </main>
-    
-        <aside class="sidebar right-sidebar sticky">
-            <section class="widget archives">
-                <div class="widget-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <line x1="5" y1="9" x2="19" y2="9" />
-  <line x1="5" y1="15" x2="19" y2="15" />
-  <line x1="11" y1="4" x2="7" y2="20" />
-  <line x1="17" y1="4" x2="13" y2="20" />
-</svg>
-
-
-
-                </div>
-                <h2 class="widget-title section-title">目录</h2>
-                
-                <div class="widget--toc">
-                    <nav id="TableOfContents">
-  <ol>
-    <li><a href="#注意的点和相关的问题">注意的点和相关的问题</a>
-      <ol>
-        <li><a href="#1为什么要再次设置环境变量">1.为什么要再次设置环境变量?</a></li>
-        <li><a href="#2数据库目录对象">2.数据库目录对象</a></li>
-        <li><a href="#3脚本完成后">3.脚本完成后</a></li>
-      </ol>
-    </li>
-  </ol>
-</nav>
-                </div>
-            </section>
-        </aside>
-    
-
         </div>
         <script 
-                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
-                defer="false"
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
                 >
-            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.c379715d01ce966da9b6eed5bc354dd0a6a8de47c36d4b6462fdc01464d258af.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');

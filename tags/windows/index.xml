@@ -1,26 +1,189 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Windows on 苏格拉</title>
-    <link>https://meowxue.github.io/tags/windows/</link>
-    <description>Recent content in Windows on 苏格拉</description>
-    <generator>Hugo</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Wed, 05 Jun 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://meowxue.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Windows计划任务执行结果为0x1</title>
-      <link>https://meowxue.github.io/p/windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C%E4%B8%BA0x1/</link>
-      <pubDate>Wed, 05 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>https://meowxue.github.io/p/windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C%E4%B8%BA0x1/</guid>
-      <description>事情是这样的，我用java写了个运维的程序，在服务器上定时给我发送程序的运行状态和日志。写好后放到服务器上做了一个定时任务，通过windows自带的计划任务来执行bat脚本。但是我发现双击bat脚本执行是没有问题的，但是在计划任务执行的时候就会失败，运行结果为0x1。&#xA;报错原因：程序和脚本中的bat脚本带有目录结构，但是起始的哪里没有配置批处理脚本所在目录路径&#xA;计划任务编辑操作.png 在红框处配置bat脚本文件的路径就可以执行成功了。</description>
-    </item>
-    <item>
-      <title>Windows服务器中Oracle数据库定时备份</title>
-      <link>https://meowxue.github.io/p/windows%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/</link>
-      <pubDate>Fri, 10 Nov 2023 00:00:00 +0000</pubDate>
-      <guid>https://meowxue.github.io/p/windows%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/</guid>
-      <description>脚本准备 rem delete 10 days files forfiles /p &amp;#34;文件路径&amp;#34; /d -10 /c &amp;#34;cmd /c echo deleting @file ... &amp;amp;&amp;amp; del /f @path&amp;#34; rem expdp sz set sz_file=备份文件名字%date:~0,4%%date:~5,2%%date:~8,2% expdp 数据库用户名/数据库密码@数据库实例名 directory=路径对象 dumpfile=%sz_file%.dmp logfile=%sz_file%.log schemas=导出的用户 compression=all 在合适的位置新建一个.bat文件，将上面的脚本复制到里面，再根据下面的说明修改好脚本。&#xA;注：如果密码中存在特殊字符，需要做特殊处理，如：&#xA;zhangsan/&amp;#34;&amp;#34;&amp;#34;abc@123&amp;#34;&amp;#34;&amp;#34;@orcl 文件路径: 备份文件所在目录&#xA;-10: 删除两天前的文件，也就是说保留两天的数据，可根据实际情况修改&#xA;备份文件名字: 此处为前缀加时间的格式 例如：xxxxx202308025120000.dmp&#xA;数据库实例名: 如：orcl，有时候可能需要补全ip地址，如：192.168.3.10/orcl&#xA;路径对象: 导出文件目录，此处的目录和平常的目录不同，这是存在于数据库中的目录对象，要使用这个对象需要用sql命令来创建&#xA;CREATE DIRECTORY hrpbackup AS &amp;#39;备份文件要存放的路径&amp;#39;; SELECT directory_name, directory_path FROM all_directories; 导出的用户: 此处为指定导出的用户，建议和数据库的用户名一致&#xA;脚本调整好后，可以双击启动测试是否能够成功备份。&#xA;开启服务器的定时任务 利用windows服务器中的任务计划程序，来定时执行数据库的备份脚本。&#xA;打开任务计划程序 Win + R 打开运行窗口，输入 taskschd.msc 确定，打开任务计划程序</description>
-    </item>
-  </channel>
+    <channel>
+        <title>Windows on 苏格拉</title>
+        <link>//localhost:1313/tags/windows/</link>
+        <description>Recent content in Windows on 苏格拉</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>Example Person</copyright>
+        <lastBuildDate>Wed, 05 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/tags/windows/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Windows计划任务执行结果为0x1</title>
+        <link>//localhost:1313/p/windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C%E4%B8%BA0x1/</link>
+        <pubDate>Wed, 05 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>//localhost:1313/p/windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C%E4%B8%BA0x1/</guid>
+        <description>&lt;p&gt;事情是这样的，我用java写了个运维的程序，在服务器上定时给我发送程序的运行状态和日志。写好后放到服务器上做了一个定时任务，通过windows自带的计划任务来执行bat脚本。但是我发现双击bat脚本执行是没有问题的，但是在计划任务执行的时候就会失败，运行结果为0x1。&lt;/p&gt;
+&lt;p&gt;报错原因：程序和脚本中的bat脚本带有目录结构，但是起始的哪里没有配置批处理脚本所在目录路径&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://imgse.com/i/pkJHoQS&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;img src=&#34;https://s21.ax1x.com/2024/06/05/pkJHoQS.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;计划任务编辑操作.png&#34;
+	
+	
+&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在红框处配置bat脚本文件的路径就可以执行成功了。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Windows服务器中Oracle数据库定时备份</title>
+        <link>//localhost:1313/p/windows%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/</link>
+        <pubDate>Fri, 10 Nov 2023 00:00:00 +0000</pubDate>
+        
+        <guid>//localhost:1313/p/windows%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/</guid>
+        <description>&lt;h2 id=&#34;脚本准备&#34;&gt;脚本准备
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bat&#34; data-lang=&#34;bat&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;rem delete 10 days files&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;forfiles /p &lt;span class=&#34;s2&#34;&gt;&amp;#34;文件路径&amp;#34;&lt;/span&gt; /d  -10 /c &lt;span class=&#34;s2&#34;&gt;&amp;#34;cmd /c echo deleting @file ... &amp;amp;&amp;amp; del /f @path&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;rem expdp sz&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;sz_file&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;备份文件名字&lt;span class=&#34;nv&#34;&gt;%date:~0,4%%date:~5,2%%date:~8,2%&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;expdp 数据库用户名/数据库密码@数据库实例名 directory=路径对象 dumpfile=&lt;span class=&#34;nv&#34;&gt;%sz_file%&lt;/span&gt;.dmp logfile=&lt;span class=&#34;nv&#34;&gt;%sz_file%&lt;/span&gt;.log schemas=导出的用户 compression=all
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;在合适的位置新建一个.bat文件，将上面的脚本复制到里面，再根据下面的说明修改好脚本。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;注：如果密码中存在特殊字符，需要做特殊处理，如：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;zhangsan/&amp;#34;&amp;#34;&amp;#34;abc@123&amp;#34;&amp;#34;&amp;#34;@orcl
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;文件路径&lt;/strong&gt;: 备份文件所在目录&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;-10&lt;/strong&gt;: 删除两天前的文件，也就是说保留两天的数据，可根据实际情况修改&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;备份文件名字&lt;/strong&gt;: 此处为前缀加时间的格式 例如：xxxxx202308025120000.dmp&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;数据库实例名&lt;/strong&gt;: 如：orcl，有时候可能需要补全ip地址，如：192.168.3.10/orcl&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;路径对象&lt;/strong&gt;: 导出文件目录，此处的目录和平常的目录不同，这是存在于数据库中的目录对象，要使用这个对象需要用sql命令来创建&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;CREATE&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;DIRECTORY&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;hrpbackup&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;AS&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;备份文件要存放的路径&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;SELECT&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;directory_name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;directory_path&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;FROM&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;all_directories&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;导出的用户&lt;/strong&gt;: 此处为指定导出的用户，建议和数据库的用户名一致&lt;/p&gt;
+&lt;p&gt;脚本调整好后，可以双击启动测试是否能够成功备份。&lt;/p&gt;
+&lt;h2 id=&#34;开启服务器的定时任务&#34;&gt;开启服务器的定时任务
+&lt;/h2&gt;&lt;p&gt;利用windows服务器中的任务计划程序，来定时执行数据库的备份脚本。&lt;/p&gt;
+&lt;h3 id=&#34;打开任务计划程序&#34;&gt;打开任务计划程序
+&lt;/h3&gt;&lt;p&gt;Win + R 打开运行窗口，输入 taskschd.msc 确定，打开任务计划程序&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://imgse.com/i/pPtR4UK&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;img src=&#34;https://s11.ax1x.com/2023/08/25/pPtR4UK.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;pPtR4UK.png&#34;
+	
+	
+&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://imgse.com/i/pPtRoCD&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;img src=&#34;https://s11.ax1x.com/2023/08/25/pPtRoCD.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;pPtRoCD.png&#34;
+	
+	
+&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;创建基本任务&#34;&gt;创建基本任务
+&lt;/h3&gt;&lt;p&gt;点击左侧 创建基本任务&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://imgse.com/i/pPtR7gH&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;img src=&#34;https://s11.ax1x.com/2023/08/25/pPtR7gH.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;pPtR7gH.png&#34;
+	
+	
+&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://imgse.com/i/pPtRqKA&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;img src=&#34;https://s11.ax1x.com/2023/08/25/pPtRqKA.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;pPtRqKA.png&#34;
+	
+	
+&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://imgse.com/i/pPtRvUf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;img src=&#34;https://s11.ax1x.com/2023/08/25/pPtRvUf.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;pPtRvUf.png&#34;
+	
+	
+&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://imgse.com/i/pPtWp8g&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;img src=&#34;https://s11.ax1x.com/2023/08/25/pPtWp8g.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;pPtWp8g.png&#34;
+	
+	
+&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://imgse.com/i/pPtfkSe&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;img src=&#34;https://s11.ax1x.com/2023/08/25/pPtfkSe.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;pPtfkSe.png&#34;
+	
+	
+&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;选择维护好的脚本&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://imgse.com/i/pPtfwfU&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;pPtfwfU.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
 </rss>

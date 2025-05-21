@@ -1,1 +1,217 @@
-(()=>{var g={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","\u2026":"&hellip;"};function m(a){return g[a]||a}function w(a){return a.replace(/[&<>"]/g,m)}function T(a){return a.replace(/[.*+\-?^${}()|[\]\\]/g,"\\$&")}var o=class a{data;form;input;list;resultTitle;resultTitleTemplate;constructor({form:e,input:r,list:i,resultTitle:n,resultTitleTemplate:t}){this.form=e,this.input=r,this.list=i,this.resultTitle=n,this.resultTitleTemplate=t,this.handleQueryString(),this.bindQueryStringChange(),this.bindSearchForm()}async searchKeywords(e){let r=await this.getData(),i=[];e.sort((n,t)=>t.length-n.length);for(let n of r){let t={...n,preview:"",matchCount:0},p=!1;for(let u of e){if(u==="")continue;let s=new RegExp(T(w(u)),"gi"),c=s.exec(t.content);s.lastIndex=0;let h=s.exec(t.title);if(s.lastIndex=0,h&&(t.title=t.title.replace(s,a.marker)),h||c){p=!0,++t.matchCount;let l=0,d=100;c&&(l=c.index-20,d=c.index+80,l<0&&(l=0)),t.preview.indexOf(u)!==-1?t.preview=t.preview.replace(s,a.marker):(l!==0&&(t.preview+="[...] "),t.preview+=`${t.content.slice(l,d).replace(s,a.marker)} `)}}p&&(t.preview+="[...]",i.push(t))}return i.sort((n,t)=>t.matchCount-n.matchCount)}static marker(e){return"<mark>"+e+"</mark>"}async doSearch(e){let r=performance.now(),i=await this.searchKeywords(e);this.clear();for(let t of i)this.list.append(a.render(t));let n=performance.now();this.resultTitle.innerText=this.generateResultTitle(i.length,((n-r)/1e3).toPrecision(1))}generateResultTitle(e,r){return this.resultTitleTemplate.replace("#PAGES_COUNT",e).replace("#TIME_SECONDS",r)}async getData(){if(!this.data){let e=this.form.dataset.json;this.data=await fetch(e).then(r=>r.json())}return this.data}bindSearchForm(){let e="",r=i=>{i.preventDefault();let n=this.input.value;if(a.updateQueryString(n,!0),n==="")return this.clear();e!==n&&(e=n,this.doSearch(n.split(" ")))};this.input.addEventListener("input",r),this.input.addEventListener("compositionend",r)}clear(){this.list.innerHTML="",this.resultTitle.innerText=""}bindQueryStringChange(){window.addEventListener("popstate",e=>{this.handleQueryString()})}handleQueryString(){let r=new URL(window.location.toString()).searchParams.get("keyword");this.input.value=r,r?this.doSearch(r.split(" ")):this.clear()}static updateQueryString(e,r=!1){let i=new URL(window.location.toString());e===""?i.searchParams.delete("keyword"):i.searchParams.set("keyword",e),r?window.history.replaceState("","",i.toString()):window.history.pushState("","",i.toString())}static render(e){return createElement("article",null,createElement("a",{href:e.permalink},createElement("div",{class:"article-details"},createElement("h2",{class:"article-title",dangerouslySetInnerHTML:{__html:e.title}}),createElement("secion",{class:"article-preview",dangerouslySetInnerHTML:{__html:e.preview}})),e.image&&createElement("div",{class:"article-image"},createElement("img",{src:e.image,loading:"lazy"}))))}};window.addEventListener("load",()=>{setTimeout(function(){let a=document.querySelector(".search-form"),e=a.querySelector("input"),r=document.querySelector(".search-result--list"),i=document.querySelector(".search-result--title");new o({form:a,input:e,list:r,resultTitle:i,resultTitleTemplate:window.searchResultTitleTemplate})},0)});var f=o;})();
+(() => {
+  // <stdin>
+  var tagsToReplace = {
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "\u2026": "&hellip;"
+  };
+  function replaceTag(tag) {
+    return tagsToReplace[tag] || tag;
+  }
+  function replaceHTMLEnt(str) {
+    return str.replace(/[&<>"]/g, replaceTag);
+  }
+  function escapeRegExp(string) {
+    return string.replace(/[.*+\-?^${}()|[\]\\]/g, "\\$&");
+  }
+  var Search = class _Search {
+    data;
+    form;
+    input;
+    list;
+    resultTitle;
+    resultTitleTemplate;
+    constructor({ form, input, list, resultTitle, resultTitleTemplate }) {
+      this.form = form;
+      this.input = input;
+      this.list = list;
+      this.resultTitle = resultTitle;
+      this.resultTitleTemplate = resultTitleTemplate;
+      if (this.input.value.trim() !== "") {
+        this.doSearch(this.input.value.split(" "));
+      } else {
+        this.handleQueryString();
+      }
+      this.bindQueryStringChange();
+      this.bindSearchForm();
+    }
+    /**
+     * Processes search matches
+     * @param str original text
+     * @param matches array of matches
+     * @param ellipsis whether to add ellipsis to the end of each match
+     * @param charLimit max length of preview string
+     * @param offset how many characters before and after the match to include in preview
+     * @returns preview string
+     */
+    static processMatches(str, matches, ellipsis = true, charLimit = 140, offset = 20) {
+      matches.sort((a, b) => {
+        return a.start - b.start;
+      });
+      let i = 0, lastIndex = 0, charCount = 0;
+      const resultArray = [];
+      while (i < matches.length) {
+        const item = matches[i];
+        if (ellipsis && item.start - offset > lastIndex) {
+          resultArray.push(`${replaceHTMLEnt(str.substring(lastIndex, lastIndex + offset))} [...] `);
+          resultArray.push(`${replaceHTMLEnt(str.substring(item.start - offset, item.start))}`);
+          charCount += offset * 2;
+        } else {
+          resultArray.push(replaceHTMLEnt(str.substring(lastIndex, item.start)));
+          charCount += item.start - lastIndex;
+        }
+        let j = i + 1, end = item.end;
+        while (j < matches.length && matches[j].start <= end) {
+          end = Math.max(matches[j].end, end);
+          ++j;
+        }
+        resultArray.push(`<mark>${replaceHTMLEnt(str.substring(item.start, end))}</mark>`);
+        charCount += end - item.start;
+        i = j;
+        lastIndex = end;
+        if (ellipsis && charCount > charLimit) break;
+      }
+      if (lastIndex < str.length) {
+        let end = str.length;
+        if (ellipsis) end = Math.min(end, lastIndex + offset);
+        resultArray.push(`${replaceHTMLEnt(str.substring(lastIndex, end))}`);
+        if (ellipsis && end != str.length) {
+          resultArray.push(` [...]`);
+        }
+      }
+      return resultArray.join("");
+    }
+    async searchKeywords(keywords) {
+      const rawData = await this.getData();
+      const results = [];
+      const regex = new RegExp(keywords.filter((v, index, arr) => {
+        arr[index] = escapeRegExp(v);
+        return v.trim() !== "";
+      }).join("|"), "gi");
+      for (const item of rawData) {
+        const titleMatches = [], contentMatches = [];
+        let result = {
+          ...item,
+          preview: "",
+          matchCount: 0
+        };
+        const contentMatchAll = item.content.matchAll(regex);
+        for (const match of Array.from(contentMatchAll)) {
+          contentMatches.push({
+            start: match.index,
+            end: match.index + match[0].length
+          });
+        }
+        const titleMatchAll = item.title.matchAll(regex);
+        for (const match of Array.from(titleMatchAll)) {
+          titleMatches.push({
+            start: match.index,
+            end: match.index + match[0].length
+          });
+        }
+        if (titleMatches.length > 0) result.title = _Search.processMatches(result.title, titleMatches, false);
+        if (contentMatches.length > 0) {
+          result.preview = _Search.processMatches(result.content, contentMatches);
+        } else {
+          result.preview = replaceHTMLEnt(result.content.substring(0, 140));
+        }
+        result.matchCount = titleMatches.length + contentMatches.length;
+        if (result.matchCount > 0) results.push(result);
+      }
+      return results.sort((a, b) => {
+        return b.matchCount - a.matchCount;
+      });
+    }
+    async doSearch(keywords) {
+      const startTime = performance.now();
+      const results = await this.searchKeywords(keywords);
+      this.clear();
+      for (const item of results) {
+        this.list.append(_Search.render(item));
+      }
+      const endTime = performance.now();
+      this.resultTitle.innerText = this.generateResultTitle(results.length, ((endTime - startTime) / 1e3).toPrecision(1));
+    }
+    generateResultTitle(resultLen, time) {
+      return this.resultTitleTemplate.replace("#PAGES_COUNT", resultLen).replace("#TIME_SECONDS", time);
+    }
+    async getData() {
+      if (!this.data) {
+        const jsonURL = this.form.dataset.json;
+        this.data = await fetch(jsonURL).then((res) => res.json());
+        const parser = new DOMParser();
+        for (const item of this.data) {
+          item.content = parser.parseFromString(item.content, "text/html").body.innerText;
+        }
+      }
+      return this.data;
+    }
+    bindSearchForm() {
+      let lastSearch = "";
+      const eventHandler = (e) => {
+        e.preventDefault();
+        const keywords = this.input.value.trim();
+        _Search.updateQueryString(keywords, true);
+        if (keywords === "") {
+          lastSearch = "";
+          return this.clear();
+        }
+        if (lastSearch === keywords) return;
+        lastSearch = keywords;
+        this.doSearch(keywords.split(" "));
+      };
+      this.input.addEventListener("input", eventHandler);
+      this.input.addEventListener("compositionend", eventHandler);
+    }
+    clear() {
+      this.list.innerHTML = "";
+      this.resultTitle.innerText = "";
+    }
+    bindQueryStringChange() {
+      window.addEventListener("popstate", (e) => {
+        this.handleQueryString();
+      });
+    }
+    handleQueryString() {
+      const pageURL = new URL(window.location.toString());
+      const keywords = pageURL.searchParams.get("keyword");
+      this.input.value = keywords;
+      if (keywords) {
+        this.doSearch(keywords.split(" "));
+      } else {
+        this.clear();
+      }
+    }
+    static updateQueryString(keywords, replaceState = false) {
+      const pageURL = new URL(window.location.toString());
+      if (keywords === "") {
+        pageURL.searchParams.delete("keyword");
+      } else {
+        pageURL.searchParams.set("keyword", keywords);
+      }
+      if (replaceState) {
+        window.history.replaceState("", "", pageURL.toString());
+      } else {
+        window.history.pushState("", "", pageURL.toString());
+      }
+    }
+    static render(item) {
+      return /* @__PURE__ */ createElement("article", null, /* @__PURE__ */ createElement("a", { href: item.permalink }, /* @__PURE__ */ createElement("div", { class: "article-details" }, /* @__PURE__ */ createElement("h2", { class: "article-title", dangerouslySetInnerHTML: { __html: item.title } }), /* @__PURE__ */ createElement("section", { class: "article-preview", dangerouslySetInnerHTML: { __html: item.preview } })), item.image && /* @__PURE__ */ createElement("div", { class: "article-image" }, /* @__PURE__ */ createElement("img", { src: item.image, loading: "lazy" }))));
+    }
+  };
+  window.addEventListener("load", () => {
+    setTimeout(function() {
+      const searchForm = document.querySelector(".search-form"), searchInput = searchForm.querySelector("input"), searchResultList = document.querySelector(".search-result--list"), searchResultTitle = document.querySelector(".search-result--title");
+      new Search({
+        form: searchForm,
+        input: searchInput,
+        list: searchResultList,
+        resultTitle: searchResultTitle,
+        resultTitleTemplate: window.searchResultTitleTemplate
+      });
+    }, 0);
+  });
+  var stdin_default = Search;
+})();

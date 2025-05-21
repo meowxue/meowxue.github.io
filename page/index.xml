@@ -1,33 +1,46 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Pages on 苏格拉</title>
-    <link>https://meowxue.github.io/page/</link>
-    <description>Recent content in Pages on 苏格拉</description>
-    <generator>Hugo</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Tue, 21 May 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://meowxue.github.io/page/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>关于</title>
-      <link>https://meowxue.github.io/about/</link>
-      <pubDate>Tue, 21 May 2024 00:00:00 +0000</pubDate>
-      <guid>https://meowxue.github.io/about/</guid>
-      <description>关于我 90后，处女男，普普通通打工人，i型人格鉴赏家。喜欢骑行、唱歌、打游戏&amp;hellip;&#xA;关于博客 记录生活，记录自己的碎碎念 记录工作中踩过的坑、遇到的问题的一些相关解决方法 自己研究、实践的一些记录 这个博客算是我自己的一个秘密基地吧，没有弄留言相关的功能，如果想联系我，想交个朋友的话， 可以通过邮件联系我（meow_xue@163.com）。</description>
-    </item>
-    <item>
-      <title>归档</title>
-      <link>https://meowxue.github.io/archives/</link>
-      <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
-      <guid>https://meowxue.github.io/archives/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>搜索</title>
-      <link>https://meowxue.github.io/search/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://meowxue.github.io/search/</guid>
-      <description></description>
-    </item>
-  </channel>
+    <channel>
+        <title>Pages on 苏格拉</title>
+        <link>//localhost:1313/page/</link>
+        <description>Recent content in Pages on 苏格拉</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>Example Person</copyright>
+        <lastBuildDate>Tue, 21 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>关于</title>
+        <link>//localhost:1313/about/</link>
+        <pubDate>Tue, 21 May 2024 00:00:00 +0000</pubDate>
+        
+        <guid>//localhost:1313/about/</guid>
+        <description>&lt;h2 id=&#34;关于我&#34;&gt;关于我
+&lt;/h2&gt;&lt;p&gt;90后，处女男，普普通通打工人，i型人格鉴赏家。喜欢骑行、唱歌、打游戏&amp;hellip;&lt;/p&gt;
+&lt;h2 id=&#34;关于博客&#34;&gt;关于博客
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;记录生活，记录自己的碎碎念&lt;/li&gt;
+&lt;li&gt;记录工作中踩过的坑、遇到的问题的一些相关解决方法&lt;/li&gt;
+&lt;li&gt;自己研究、实践的一些记录&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这个博客算是我自己的一个秘密基地吧，没有弄留言相关的功能，如果想联系我，想交个朋友的话，
+可以通过邮件联系我（meow_&lt;a class=&#34;link&#34; href=&#34;mailto:xue@163.com&#34; &gt;xue@163.com&lt;/a&gt;）。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>归档</title>
+        <link>//localhost:1313/archives/</link>
+        <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+        
+        <guid>//localhost:1313/archives/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>搜索</title>
+        <link>//localhost:1313/search/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>//localhost:1313/search/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
 </rss>
