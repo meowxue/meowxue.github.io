@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Pages on 苏格拉</title>
-        <link>hugo-theme-stack/page/</link>
+        <link>//localhost:1313/page/</link>
         <description>Recent content in Pages on 苏格拉</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Example Person</copyright>
-        <lastBuildDate>Tue, 28 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="hugo-theme-stack/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 28 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/page/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>归档</title>
-        <link>hugo-theme-stack/archives/</link>
+        <link>//localhost:1313/archives/</link>
         <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
         
-        <guid>hugo-theme-stack/archives/</guid>
+        <guid>//localhost:1313/archives/</guid>
         <description></description>
         </item>
         <item>
         <title>关于</title>
-        <link>hugo-theme-stack/about/</link>
+        <link>//localhost:1313/about/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>hugo-theme-stack/about/</guid>
+        <guid>//localhost:1313/about/</guid>
         <description>&lt;h2 id=&#34;关于我&#34;&gt;关于我
 &lt;/h2&gt;&lt;p&gt;90后，处女男，普普通通打工人，i型人格。喜欢骑行、唱歌、打游戏&amp;hellip;
 最喜欢的歌手是许嵩，&lt;/p&gt;
@@ -36,10 +36,10 @@
         </item>
         <item>
         <title>说说</title>
-        <link>hugo-theme-stack/%E8%AF%B4%E8%AF%B4/</link>
+        <link>//localhost:1313/%E8%AF%B4%E8%AF%B4/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>hugo-theme-stack/%E8%AF%B4%E8%AF%B4/</guid>
+        <guid>//localhost:1313/%E8%AF%B4%E8%AF%B4/</guid>
         <description>&lt;div class=&#34;daily-speak&#34;&gt;
     &lt;div class=&#34;speak-header&#34;&gt;
         &lt;div class=&#34;speak-date&#34;&gt;
@@ -205,10 +205,10 @@
         </item>
         <item>
         <title>搜索</title>
-        <link>hugo-theme-stack/search/</link>
+        <link>//localhost:1313/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>hugo-theme-stack/search/</guid>
+        <guid>//localhost:1313/search/</guid>
         <description></description>
         </item>
         
