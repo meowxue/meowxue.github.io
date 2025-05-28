@@ -2,41 +2,49 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Categories on 苏格拉</title>
-        <link>//localhost:1313/categories/</link>
+        <link>hugo-theme-stack/categories/</link>
         <description>Recent content in Categories on 苏格拉</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Example Person</copyright>
-        <lastBuildDate>Sat, 10 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 17 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="hugo-theme-stack/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>生活</title>
+        <link>hugo-theme-stack/categories/life/</link>
+        <pubDate>Sat, 17 May 2025 00:00:00 +0000</pubDate>
+        
+        <guid>hugo-theme-stack/categories/life/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>数据库</title>
+        <link>hugo-theme-stack/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+        <pubDate>Fri, 25 Oct 2024 00:00:00 +0000</pubDate>
+        
+        <guid>hugo-theme-stack/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Java</title>
-        <link>//localhost:1313/categories/java/</link>
+        <link>hugo-theme-stack/categories/java/</link>
         <pubDate>Sat, 10 Aug 2024 00:00:00 +0000</pubDate>
         
-        <guid>//localhost:1313/categories/java/</guid>
+        <guid>hugo-theme-stack/categories/java/</guid>
         <description></description>
         </item>
         <item>
         <title>Windows</title>
-        <link>//localhost:1313/categories/windows/</link>
+        <link>hugo-theme-stack/categories/windows/</link>
         <pubDate>Wed, 05 Jun 2024 00:00:00 +0000</pubDate>
         
-        <guid>//localhost:1313/categories/windows/</guid>
+        <guid>hugo-theme-stack/categories/windows/</guid>
         <description></description>
         </item>
         <item>
         <title>Linux</title>
-        <link>//localhost:1313/categories/linux/</link>
+        <link>hugo-theme-stack/categories/linux/</link>
         <pubDate>Wed, 30 Aug 2023 00:00:00 +0000</pubDate>
         
-        <guid>//localhost:1313/categories/linux/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>生活</title>
-        <link>//localhost:1313/categories/life/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>//localhost:1313/categories/life/</guid>
+        <guid>hugo-theme-stack/categories/linux/</guid>
         <description></description>
         </item>
         

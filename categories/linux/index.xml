@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Linux on 苏格拉</title>
-        <link>//localhost:1313/categories/linux/</link>
+        <link>hugo-theme-stack/categories/linux/</link>
         <description>Recent content in Linux on 苏格拉</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Example Person</copyright>
-        <lastBuildDate>Wed, 30 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/categories/linux/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 30 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="hugo-theme-stack/categories/linux/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Linux服务器中Oracle数据库定时备份</title>
-        <link>//localhost:1313/p/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/</link>
+        <link>hugo-theme-stack/p/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/</link>
         <pubDate>Wed, 30 Aug 2023 00:00:00 +0000</pubDate>
         
-        <guid>//localhost:1313/p/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/</guid>
+        <guid>hugo-theme-stack/p/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/</guid>
         <description>&lt;h1 id=&#34;概述&#34;&gt;概述
 &lt;/h1&gt;&lt;p&gt;大多数的linux发行版都默认安装了corn服务和crontab工具。cron服务是一个用于执行定时任务的后台服务，而crontab是用于编辑和管理用户的定时任务的命令行工具。通过crontab工具，用户可以添加、编辑、删除定时任务的执行时间和要运行的命令或者脚本。&lt;/p&gt;
 &lt;p&gt;利用定时执行备份的shell脚本。&lt;/p&gt;
@@ -271,10 +271,10 @@
         </item>
         <item>
         <title>Linux中安装nvm</title>
-        <link>//localhost:1313/p/linux%E4%B8%AD%E5%AE%89%E8%A3%85nvm/</link>
+        <link>hugo-theme-stack/p/linux%E4%B8%AD%E5%AE%89%E8%A3%85nvm/</link>
         <pubDate>Fri, 27 May 2022 00:00:00 +0000</pubDate>
         
-        <guid>//localhost:1313/p/linux%E4%B8%AD%E5%AE%89%E8%A3%85nvm/</guid>
+        <guid>hugo-theme-stack/p/linux%E4%B8%AD%E5%AE%89%E8%A3%85nvm/</guid>
         <description>&lt;p&gt;NVM 是一个非常方便的node包管理工具，可以实现在NodeJS 各个不同版本之间自由的进行切换。
  &lt;/p&gt;
 &lt;h2 id=&#34;1下载nvm安装包&#34;&gt;1.下载nvm安装包

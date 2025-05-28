@@ -2,19 +2,28 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Pages on 苏格拉</title>
-        <link>//localhost:1313/page/</link>
+        <link>hugo-theme-stack/page/</link>
         <description>Recent content in Pages on 苏格拉</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Example Person</copyright>
-        <lastBuildDate>Tue, 21 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/page/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>关于</title>
-        <link>//localhost:1313/about/</link>
-        <pubDate>Tue, 21 May 2024 00:00:00 +0000</pubDate>
+        <lastBuildDate>Tue, 28 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="hugo-theme-stack/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>归档</title>
+        <link>hugo-theme-stack/archives/</link>
+        <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
         
-        <guid>//localhost:1313/about/</guid>
+        <guid>hugo-theme-stack/archives/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>关于</title>
+        <link>hugo-theme-stack/about/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>hugo-theme-stack/about/</guid>
         <description>&lt;h2 id=&#34;关于我&#34;&gt;关于我
-&lt;/h2&gt;&lt;p&gt;90后，处女男，普普通通打工人，i型人格鉴赏家。喜欢骑行、唱歌、打游戏&amp;hellip;&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;90后，处女男，普普通通打工人，i型人格。喜欢骑行、唱歌、打游戏&amp;hellip;
+最喜欢的歌手是许嵩，&lt;/p&gt;
 &lt;h2 id=&#34;关于博客&#34;&gt;关于博客
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;记录生活，记录自己的碎碎念&lt;/li&gt;
@@ -22,23 +31,184 @@
 &lt;li&gt;自己研究、实践的一些记录&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;这个博客算是我自己的一个秘密基地吧，没有弄留言相关的功能，如果想联系我，想交个朋友的话，
-可以通过邮件联系我（meow_&lt;a class=&#34;link&#34; href=&#34;mailto:xue@163.com&#34; &gt;xue@163.com&lt;/a&gt;）。&lt;/p&gt;
+可以通过邮件联系我。&lt;/p&gt;
 </description>
         </item>
         <item>
-        <title>归档</title>
-        <link>//localhost:1313/archives/</link>
-        <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+        <title>说说</title>
+        <link>hugo-theme-stack/%E8%AF%B4%E8%AF%B4/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>//localhost:1313/archives/</guid>
-        <description></description>
+        <guid>hugo-theme-stack/%E8%AF%B4%E8%AF%B4/</guid>
+        <description>&lt;div class=&#34;daily-speak&#34;&gt;
+    &lt;div class=&#34;speak-header&#34;&gt;
+        &lt;div class=&#34;speak-date&#34;&gt;
+            &lt;span class=&#34;date-day&#34;&gt;22&lt;/span&gt;
+            &lt;span class=&#34;date-month&#34;&gt;5月&lt;/span&gt;
+            &lt;span class=&#34;date-year&#34;&gt;2025&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;weather-tag&#34;&gt;☀️ 晴&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;speak-content&#34;&gt;
+        &lt;p&gt;重新测试了十六种人格测试，发生变化了，由原来的ISTP变成了INFP，果然人是会变化的。&lt;a target=&#34;_blank&#34; href=&#34;https://www.16personalities.com/ch/%E4%BA%BA%E6%A0%BC%E6%B5%8B%E8%AF%95&#34;&gt;免费人格测试&lt;/a&gt;&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;daily-speak&#34;&gt;
+    &lt;div class=&#34;speak-header&#34;&gt;
+        &lt;div class=&#34;speak-date&#34;&gt;
+            &lt;span class=&#34;date-day&#34;&gt;22&lt;/span&gt;
+            &lt;span class=&#34;date-month&#34;&gt;5月&lt;/span&gt;
+            &lt;span class=&#34;date-year&#34;&gt;2025&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;weather-tag&#34;&gt;☀️ 晴 &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;speak-content&#34;&gt;
+        &lt;p&gt;今天加入了碎碎念的功能，让ai帮忙设计了信息框的样式，我感觉还不错哦&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;style&gt;
+    .daily-speak {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.speak-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 2px solid #eee;
+}
+
+.speak-date {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    font-family: system-ui;
+}
+
+.date-day {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.date-month {
+    font-size: 1.1rem;
+    color: #6c757d;
+    position: relative;
+    top: -2px;
+}
+
+.date-year {
+    font-size: 0.9rem;
+    color: #95a5a6;
+    font-weight: 300;
+}
+
+.weather-tag {
+    background: rgba(255,193,7,0.15);
+    color: #e67e22;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.speak-content {
+    font-size: 1.5rem;
+    line-height: 1.7;
+    color: #34495e;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .speak-date {
+        gap: 0.3rem;
+    }
+    .date-day {
+        font-size: 1.5rem;
+    }
+    .date-month {
+        font-size: 1rem;
+    }
+    .weather-tag {
+        font-size: 0.8rem;
+    }
+}
+/* 基础标签样式 */
+[class$=&#34;-tag&#34;] {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin: 0 5px 5px 0;
+    backdrop-filter: saturate(180%) blur(20px);
+}
+
+/* 情感类样式 */
+.mood-happy { background: rgba(255,193,7,0.15); color: #e67e22; }
+.mood-sad { background: rgba(66,153,225,0.15); color: #4299e1; }
+
+/* 环境信息类 */
+.location-tag { background: rgba(46,204,113,0.15); color: #2ecc71; }
+.environment-tag { background: rgba(52,152,219,0.15); color: #3498db; }
+
+/* 技术信息类 */
+.device-tag { background: rgba(155,89,182,0.15); color: #9b59b6; }
+.platform-tag { background: rgba(231,76,60,0.15); color: #e74c3c; }
+
+/* 动态数据类 */
+.stats-tag { background: rgba(241,196,15,0.15); color: #f1c40f; }
+.time-tag { background: rgba(52,73,94,0.15); color: #34495e; }
+/* 基础链接样式 */
+.speak-content a {
+    color: #2b6cb0;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-bottom: 2px solid rgba(43, 108, 176, 0.2);
+    padding-bottom: 1px;
+    cursor: pointer;
+}
+
+/* 悬停状态 */
+.speak-content a:hover {
+    color: #2c5282;
+    border-bottom-color: currentColor;
+    transform: translateY(-1px);
+}
+
+/* 焦点状态 */
+.speak-content a:focus {
+    outline: 3px solid rgba(66, 153, 225, 0.5);
+    outline-offset: 2px;
+}
+
+/* 访问过的链接 */
+.speak-content a:visited {
+    color: #553c9a;
+    border-bottom-color: rgba(85, 60, 154, 0.2);
+}
+
+/* 活动状态 */
+.speak-content a:active {
+    transform: translateY(0);
+    opacity: 0.8;
+}
+
+&lt;/style&gt;</description>
         </item>
         <item>
         <title>搜索</title>
-        <link>//localhost:1313/search/</link>
+        <link>hugo-theme-stack/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>//localhost:1313/search/</guid>
+        <guid>hugo-theme-stack/search/</guid>
         <description></description>
         </item>
         

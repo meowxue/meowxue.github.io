@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Java on 苏格拉</title>
-        <link>//localhost:1313/categories/java/</link>
+        <link>hugo-theme-stack/categories/java/</link>
         <description>Recent content in Java on 苏格拉</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Example Person</copyright>
-        <lastBuildDate>Sat, 10 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/categories/java/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 10 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="hugo-theme-stack/categories/java/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>maven安装本地的jar包到仓库</title>
-        <link>//localhost:1313/p/maven%E5%AE%89%E8%A3%85%E6%9C%AC%E5%9C%B0%E7%9A%84jar%E5%8C%85%E5%88%B0%E4%BB%93%E5%BA%93/</link>
+        <link>hugo-theme-stack/p/maven%E5%AE%89%E8%A3%85%E6%9C%AC%E5%9C%B0%E7%9A%84jar%E5%8C%85%E5%88%B0%E4%BB%93%E5%BA%93/</link>
         <pubDate>Sat, 10 Aug 2024 00:00:00 +0000</pubDate>
         
-        <guid>//localhost:1313/p/maven%E5%AE%89%E8%A3%85%E6%9C%AC%E5%9C%B0%E7%9A%84jar%E5%8C%85%E5%88%B0%E4%BB%93%E5%BA%93/</guid>
+        <guid>hugo-theme-stack/p/maven%E5%AE%89%E8%A3%85%E6%9C%AC%E5%9C%B0%E7%9A%84jar%E5%8C%85%E5%88%B0%E4%BB%93%E5%BA%93/</guid>
         <description>&lt;p&gt;项目中有用到人大金仓的数据库，但是这个包，在maven仓库中找不到，所以需要手动安装到仓库中。在此记录如何将下载好的jar包安装到仓库中。&lt;/p&gt;
 &lt;p&gt;命令格式如下:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -42,10 +42,10 @@
         </item>
         <item>
         <title>用sqlserver官方驱动包调用存储过程遇到的一个坑</title>
-        <link>//localhost:1313/p/%E7%94%A8sqlserver%E5%AE%98%E6%96%B9%E9%A9%B1%E5%8A%A8%E5%8C%85%E8%B0%83%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9D%91/</link>
+        <link>hugo-theme-stack/p/%E7%94%A8sqlserver%E5%AE%98%E6%96%B9%E9%A9%B1%E5%8A%A8%E5%8C%85%E8%B0%83%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9D%91/</link>
         <pubDate>Thu, 13 Oct 2022 00:00:00 +0000</pubDate>
         
-        <guid>//localhost:1313/p/%E7%94%A8sqlserver%E5%AE%98%E6%96%B9%E9%A9%B1%E5%8A%A8%E5%8C%85%E8%B0%83%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9D%91/</guid>
+        <guid>hugo-theme-stack/p/%E7%94%A8sqlserver%E5%AE%98%E6%96%B9%E9%A9%B1%E5%8A%A8%E5%8C%85%E8%B0%83%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9D%91/</guid>
         <description>&lt;p&gt;和外部系统做对接，对方提供了一个存储过程，对方为sqlserver数据库，我方为oracle数据库。
 需求简单来说就是调用对方的存储过程获得结果，转储到我方库，后续在对数据进行处理。&lt;/p&gt;
 &lt;p&gt;我写了个代码片段做测试，用jdbc来调用对方的存储过程，可是在调用后就直接报错了，错误信息如下&lt;/p&gt;

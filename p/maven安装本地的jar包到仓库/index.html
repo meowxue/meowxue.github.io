@@ -1,35 +1,22 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+    <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="项目中有用到人大金仓的数据库，但是这个包，在maven仓库中找不到，所以需要手动安装到仓库中。在此记录如何将下载好的jar包安装到仓库中。\n命令格式如下:\n1 mvn -s /home/meowxue/Dev/environment/apache-maven-3.9.8/conf/settings-private.xml install:install-file -DgroupId=com.kingbase8 -DartifactId=kingbase8 -Dversion=8.6.0 -Dfile=/home/meowxue/下载/kingbase8/kingbase8/8.6.0/kingbase8-8.6.0.jar -Dpackaging=jar -DgeneratePom=true 说明：\n-s：指定settings.xml文件路径\r-DgroupId：jar包所在组，对应pom.xml中的groupId\r-DartifactId：jar包名称，对应pom.xml中的artifactId\r-Dversion：jar包版本，对应pom.xml中的version\r-Dfile：jar包路径\r-Dpackaging：jar包类型（一般都为jar）\r-DgeneratePom=true：是否生成对应的pom.xml文件 ">
 <title>maven安装本地的jar包到仓库</title>
 
-<link rel='canonical' href='//localhost:1313/p/maven%E5%AE%89%E8%A3%85%E6%9C%AC%E5%9C%B0%E7%9A%84jar%E5%8C%85%E5%88%B0%E4%BB%93%E5%BA%93/'>
+<link rel='canonical' href='hugo-theme-stack/p/maven%E5%AE%89%E8%A3%85%E6%9C%AC%E5%9C%B0%E7%9A%84jar%E5%8C%85%E5%88%B0%E4%BB%93%E5%BA%93/'>
 
-<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="maven安装本地的jar包到仓库">
+<link rel="stylesheet" href="hugo-theme-stack/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="maven安装本地的jar包到仓库">
 <meta property='og:description' content="项目中有用到人大金仓的数据库，但是这个包，在maven仓库中找不到，所以需要手动安装到仓库中。在此记录如何将下载好的jar包安装到仓库中。\n命令格式如下:\n1 mvn -s /home/meowxue/Dev/environment/apache-maven-3.9.8/conf/settings-private.xml install:install-file -DgroupId=com.kingbase8 -DartifactId=kingbase8 -Dversion=8.6.0 -Dfile=/home/meowxue/下载/kingbase8/kingbase8/8.6.0/kingbase8-8.6.0.jar -Dpackaging=jar -DgeneratePom=true 说明：\n-s：指定settings.xml文件路径\r-DgroupId：jar包所在组，对应pom.xml中的groupId\r-DartifactId：jar包名称，对应pom.xml中的artifactId\r-Dversion：jar包版本，对应pom.xml中的version\r-Dfile：jar包路径\r-Dpackaging：jar包类型（一般都为jar）\r-DgeneratePom=true：是否生成对应的pom.xml文件 ">
-<meta property='og:url' content='//localhost:1313/p/maven%E5%AE%89%E8%A3%85%E6%9C%AC%E5%9C%B0%E7%9A%84jar%E5%8C%85%E5%88%B0%E4%BB%93%E5%BA%93/'>
+<meta property='og:url' content='hugo-theme-stack/p/maven%E5%AE%89%E8%A3%85%E6%9C%AC%E5%9C%B0%E7%9A%84jar%E5%8C%85%E5%88%B0%E4%BB%93%E5%BA%93/'>
 <meta property='og:site_name' content='苏格拉'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='maven' /><meta property='article:published_time' content='2024-08-10T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-08-10T00:00:00&#43;00:00'/>
 <meta name="twitter:title" content="maven安装本地的jar包到仓库">
-<meta name="twitter:description" content="项目中有用到人大金仓的数据库，但是这个包，在maven仓库中找不到，所以需要手动安装到仓库中。在此记录如何将下载好的jar包安装到仓库中。\n命令格式如下:\n1 mvn -s /home/meowxue/Dev/environment/apache-maven-3.9.8/conf/settings-private.xml install:install-file -DgroupId=com.kingbase8 -DartifactId=kingbase8 -Dversion=8.6.0 -Dfile=/home/meowxue/下载/kingbase8/kingbase8/8.6.0/kingbase8-8.6.0.jar -Dpackaging=jar -DgeneratePom=true 说明：\n-s：指定settings.xml文件路径\r-DgroupId：jar包所在组，对应pom.xml中的groupId\r-DartifactId：jar包名称，对应pom.xml中的artifactId\r-Dversion：jar包版本，对应pom.xml中的version\r-Dfile：jar包路径\r-Dpackaging：jar包类型（一般都为jar）\r-DgeneratePom=true：是否生成对应的pom.xml文件 "><style>
-     
-    :root {
-        --article-font-family: "Merriweather", var(--base-font-family);
-    }
-</style>
+<meta name="twitter:description" content="项目中有用到人大金仓的数据库，但是这个包，在maven仓库中找不到，所以需要手动安装到仓库中。在此记录如何将下载好的jar包安装到仓库中。\n命令格式如下:\n1 mvn -s /home/meowxue/Dev/environment/apache-maven-3.9.8/conf/settings-private.xml install:install-file -DgroupId=com.kingbase8 -DartifactId=kingbase8 -Dversion=8.6.0 -Dfile=/home/meowxue/下载/kingbase8/kingbase8/8.6.0/kingbase8-8.6.0.jar -Dpackaging=jar -DgeneratePom=true 说明：\n-s：指定settings.xml文件路径\r-DgroupId：jar包所在组，对应pom.xml中的groupId\r-DartifactId：jar包名称，对应pom.xml中的artifactId\r-Dversion：jar包版本，对应pom.xml中的version\r-Dfile：jar包路径\r-Dpackaging：jar包类型（一般都为jar）\r-DgeneratePom=true：是否生成对应的pom.xml文件 "><script
+    src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+    async
+></script>
 
-<script>
-    (function () {
-        const customFont = document.createElement('link');
-        customFont.href = "https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap";
-    
-        customFont.type = "text/css";
-        customFont.rel = "stylesheet";
-    
-        document.head.appendChild(customFont);
-    }());
-</script>
     </head>
     <body class="
     article-page
@@ -67,13 +54,13 @@
         
             
             <figure class="site-avatar">
-                <a href="/">
+                <a href="/hugo-theme-stack/">
                 
                     
                     
                     
                         
-                        <img src="/img/avatar_hu_bbb4c3ca8f1815fe.jpg" width="300"
+                        <img src="hugo-theme-stack/img/avatar_hu_bbb4c3ca8f1815fe.jpg" width="300"
                             height="300" class="site-logo" loading="lazy" alt="Avatar">
                     
                 
@@ -86,7 +73,7 @@
         
         
         <div class="site-meta">
-            <h1 class="site-name"><a href="//localhost:1313/">苏格拉</a></h1>
+            <h1 class="site-name"><a href="/hugo-theme-stack">苏格拉</a></h1>
             <h2 class="site-description">你是谁？” “苏格拉” “…底？ “就苏格拉。没有底。”</h2>
         </div>
     </header><ol class="menu-social">
@@ -134,7 +121,7 @@
         
         
         <li >
-            <a href='/' >
+            <a href='hugo-theme-stack/' >
                 
                 
                 
@@ -154,26 +141,19 @@
         
         
         <li >
-            <a href='/about/' >
+            <a href='hugo-theme-stack/%E8%AF%B4%E8%AF%B4/' >
                 
                 
                 
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="7" r="4" />
-  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-</svg>
-
-
-
+                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-message"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 9h8" /><path d="M8 13h6" /><path d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12z" /></svg>
                 
-                <span>关于</span>
+                <span>说说</span>
             </a>
         </li>
         
         
         <li >
-            <a href='/archives/' >
+            <a href='hugo-theme-stack/archives/' >
                 
                 
                 
@@ -193,7 +173,26 @@
         
         
         <li >
-            <a href='/search/' >
+            <a href='hugo-theme-stack/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='hugo-theme-stack/search/' >
                 
                 
                 
@@ -249,7 +248,7 @@
     
     <header class="article-category">
         
-            <a href="/categories/java/" style="background-color: #2a9d8f; color: #fff;">
+            <a href="hugo-theme-stack/categories/java/" style="background-color: #2a9d8f; color: #fff;">
                 Java
             </a>
         
@@ -258,7 +257,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/maven%E5%AE%89%E8%A3%85%E6%9C%AC%E5%9C%B0%E7%9A%84jar%E5%8C%85%E5%88%B0%E4%BB%93%E5%BA%93/">maven安装本地的jar包到仓库</a>
+            <a href="hugo-theme-stack/p/maven%E5%AE%89%E8%A3%85%E6%9C%AC%E5%9C%B0%E7%9A%84jar%E5%8C%85%E5%88%B0%E4%BB%93%E5%BA%93/">maven安装本地的jar包到仓库</a>
         </h2>
     
         
@@ -343,7 +342,7 @@
     
     <section class="article-tags">
         
-            <a href="/tags/maven/">Maven</a>
+            <a href="hugo-theme-stack/tags/maven/">Maven</a>
         
     </section>
 
@@ -377,7 +376,7 @@
             
                 
 <article class="">
-    <a href="/p/%E7%94%A8sqlserver%E5%AE%98%E6%96%B9%E9%A9%B1%E5%8A%A8%E5%8C%85%E8%B0%83%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9D%91/">
+    <a href="hugo-theme-stack/p/%E7%94%A8sqlserver%E5%AE%98%E6%96%B9%E9%A9%B1%E5%8A%A8%E5%8C%85%E8%B0%83%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9D%91/">
         
         
 
@@ -395,48 +394,6 @@
      
     
         
-    <div class="disqus-container">
-    <div id="disqus_thread"></div>
-<script>
-    window.disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-</div>
-
-<style>
-    .disqus-container {
-        background-color: var(--card-background);
-        border-radius: var(--card-border-radius);
-        box-shadow: var(--shadow-l1);
-        padding: var(--card-padding);
-    }
-</style>
-
-<script>
-    window.addEventListener('onColorSchemeChange', (e) => {
-        if (typeof DISQUS == 'object') {
-            DISQUS.reset({
-                reload: true
-            });
-        }
-    })
-</script>
-
     
 
     <footer class="site-footer">
@@ -446,6 +403,8 @@
             2020 - 
         
         2025 Example Person
+        
+
     </section>
     
     <section class="powerby">
@@ -539,7 +498,7 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.c379715d01ce966da9b6eed5bc354dd0a6a8de47c36d4b6462fdc01464d258af.js" defer></script>
+            </script><script type="text/javascript" src="hugo-theme-stack/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');
