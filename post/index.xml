@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Posts on 苏格拉</title>
-        <link>hugo-theme-stack/post/</link>
+        <link>//localhost:1313/post/</link>
         <description>Recent content in Posts on 苏格拉</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Example Person</copyright>
-        <lastBuildDate>Sat, 17 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="hugo-theme-stack/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 17 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/post/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>逍遥时光(20250517)</title>
-        <link>hugo-theme-stack/p/%E9%80%8D%E9%81%A5%E6%97%B6%E5%85%8920250517/</link>
+        <link>//localhost:1313/p/%E9%80%8D%E9%81%A5%E6%97%B6%E5%85%8920250517/</link>
         <pubDate>Sat, 17 May 2025 00:00:00 +0000</pubDate>
         
-        <guid>hugo-theme-stack/p/%E9%80%8D%E9%81%A5%E6%97%B6%E5%85%8920250517/</guid>
+        <guid>//localhost:1313/p/%E9%80%8D%E9%81%A5%E6%97%B6%E5%85%8920250517/</guid>
         <description>&lt;p&gt;今天是周六，而且是还是阴历的四月二十，知道我为什么强调阴历吗，因为今天有大集，早就想去逛逛了，今天目的很简单——去购买食材。&lt;/p&gt;
 &lt;p&gt;八点钟就起床了，没有睡懒觉的习惯，对于我来说放假多睡一秒那都是浪费！磨磨蹭蹭了一会儿九点钟出门了，我在网上查我所要去的集市每逢阴历五、十都会开，但我还是想确定一下，正好出了电梯看到一位奶奶在哄他的孙子，于是我就问了这位奶奶得到了我想要的答案。出了小区刚到公交站我就发现了不一般，我看到很多爷爷奶奶再等公交车，而且手里还握着那种简便的买菜车，一看就是去赶集的。&lt;/p&gt;
 &lt;p&gt;坐上公交车来到大集，刚下车就能看到密密麻麻的人头，我还是第一次逛家乡以外的集市，咱先不买东西先逛逛，看看都有什么好吃的好玩的。&lt;/p&gt;
@@ -244,10 +244,10 @@
         </item>
         <item>
         <title>做凉皮</title>
-        <link>hugo-theme-stack/p/%E5%81%9A%E5%87%89%E7%9A%AE/</link>
+        <link>//localhost:1313/p/%E5%81%9A%E5%87%89%E7%9A%AE/</link>
         <pubDate>Wed, 23 Apr 2025 00:00:00 +0000</pubDate>
         
-        <guid>hugo-theme-stack/p/%E5%81%9A%E5%87%89%E7%9A%AE/</guid>
+        <guid>//localhost:1313/p/%E5%81%9A%E5%87%89%E7%9A%AE/</guid>
         <description>&lt;p&gt;之前很想尝试做凉皮，奈何没有制作工具，所以一直没有动手，在一次下班回去的路上，我看到街边的小贩有卖凉皮的，又重新点燃了我想做凉皮的欲望，在拼夕夕上一搜索，还真的不贵，十几块就可以买到蒸凉皮用的锣，还送了很多小工具，我果断下单。到货就赶紧尝试起来了。&lt;/p&gt;
 &lt;p&gt;凉皮的做法其实不难，难点主要就在洗面和蒸的时候的面浆放多少，还有需要蒸的时间。在工具到的前一天晚上，我就开始准备洗面浆了，洗出了两大盆，洗出的面浆还需要沉淀一晚才可以用，明天晚上就可以开蒸啦。&lt;/p&gt;
 &lt;div class=&#34;gallery-grid&#34;&gt;
@@ -463,10 +463,10 @@
         </item>
         <item>
         <title>Oracle数据泵导出的DMP文件还原 </title>
-        <link>hugo-theme-stack/p/oracle%E6%95%B0%E6%8D%AE%E6%B3%B5%E5%AF%BC%E5%87%BA%E7%9A%84dmp%E6%96%87%E4%BB%B6%E8%BF%98%E5%8E%9F/</link>
+        <link>//localhost:1313/p/oracle%E6%95%B0%E6%8D%AE%E6%B3%B5%E5%AF%BC%E5%87%BA%E7%9A%84dmp%E6%96%87%E4%BB%B6%E8%BF%98%E5%8E%9F/</link>
         <pubDate>Fri, 25 Oct 2024 00:00:00 +0000</pubDate>
         
-        <guid>hugo-theme-stack/p/oracle%E6%95%B0%E6%8D%AE%E6%B3%B5%E5%AF%BC%E5%87%BA%E7%9A%84dmp%E6%96%87%E4%BB%B6%E8%BF%98%E5%8E%9F/</guid>
+        <guid>//localhost:1313/p/oracle%E6%95%B0%E6%8D%AE%E6%B3%B5%E5%AF%BC%E5%87%BA%E7%9A%84dmp%E6%96%87%E4%BB%B6%E8%BF%98%E5%8E%9F/</guid>
         <description>&lt;p&gt;Oracle数据库备份的DMP文件如何还原到数据库中，或者还原到另外一个Oracle数据库中&lt;/p&gt;
 &lt;p&gt;下面这个命令在oracle所在服务器中根据自身情况修改后执行：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -510,10 +510,10 @@
         </item>
         <item>
         <title>maven安装本地的jar包到仓库</title>
-        <link>hugo-theme-stack/p/maven%E5%AE%89%E8%A3%85%E6%9C%AC%E5%9C%B0%E7%9A%84jar%E5%8C%85%E5%88%B0%E4%BB%93%E5%BA%93/</link>
+        <link>//localhost:1313/p/maven%E5%AE%89%E8%A3%85%E6%9C%AC%E5%9C%B0%E7%9A%84jar%E5%8C%85%E5%88%B0%E4%BB%93%E5%BA%93/</link>
         <pubDate>Sat, 10 Aug 2024 00:00:00 +0000</pubDate>
         
-        <guid>hugo-theme-stack/p/maven%E5%AE%89%E8%A3%85%E6%9C%AC%E5%9C%B0%E7%9A%84jar%E5%8C%85%E5%88%B0%E4%BB%93%E5%BA%93/</guid>
+        <guid>//localhost:1313/p/maven%E5%AE%89%E8%A3%85%E6%9C%AC%E5%9C%B0%E7%9A%84jar%E5%8C%85%E5%88%B0%E4%BB%93%E5%BA%93/</guid>
         <description>&lt;p&gt;项目中有用到人大金仓的数据库，但是这个包，在maven仓库中找不到，所以需要手动安装到仓库中。在此记录如何将下载好的jar包安装到仓库中。&lt;/p&gt;
 &lt;p&gt;命令格式如下:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -543,10 +543,10 @@
         </item>
         <item>
         <title>Windows计划任务执行结果为0x1</title>
-        <link>hugo-theme-stack/p/windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C%E4%B8%BA0x1/</link>
+        <link>//localhost:1313/p/windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C%E4%B8%BA0x1/</link>
         <pubDate>Wed, 05 Jun 2024 00:00:00 +0000</pubDate>
         
-        <guid>hugo-theme-stack/p/windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C%E4%B8%BA0x1/</guid>
+        <guid>//localhost:1313/p/windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C%E4%B8%BA0x1/</guid>
         <description>&lt;p&gt;事情是这样的，我用java写了个运维的程序，在服务器上定时给我发送程序的运行状态和日志。写好后放到服务器上做了一个定时任务，通过windows自带的计划任务来执行bat脚本。但是我发现双击bat脚本执行是没有问题的，但是在计划任务执行的时候就会失败，运行结果为0x1。&lt;/p&gt;
 &lt;p&gt;报错原因：程序和脚本中的bat脚本带有目录结构，但是起始的哪里没有配置批处理脚本所在目录路径&lt;/p&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://imgse.com/i/pkJHoQS&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -565,10 +565,10 @@
         </item>
         <item>
         <title>Windows服务器中Oracle数据库定时备份</title>
-        <link>hugo-theme-stack/p/windows%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/</link>
+        <link>//localhost:1313/p/windows%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/</link>
         <pubDate>Fri, 10 Nov 2023 00:00:00 +0000</pubDate>
         
-        <guid>hugo-theme-stack/p/windows%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/</guid>
+        <guid>//localhost:1313/p/windows%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/</guid>
         <description>&lt;h2 id=&#34;脚本准备&#34;&gt;脚本准备
 &lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -720,10 +720,10 @@
         </item>
         <item>
         <title>Linux服务器中Oracle数据库定时备份</title>
-        <link>hugo-theme-stack/p/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/</link>
+        <link>//localhost:1313/p/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/</link>
         <pubDate>Wed, 30 Aug 2023 00:00:00 +0000</pubDate>
         
-        <guid>hugo-theme-stack/p/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/</guid>
+        <guid>//localhost:1313/p/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/</guid>
         <description>&lt;h1 id=&#34;概述&#34;&gt;概述
 &lt;/h1&gt;&lt;p&gt;大多数的linux发行版都默认安装了corn服务和crontab工具。cron服务是一个用于执行定时任务的后台服务，而crontab是用于编辑和管理用户的定时任务的命令行工具。通过crontab工具，用户可以添加、编辑、删除定时任务的执行时间和要运行的命令或者脚本。&lt;/p&gt;
 &lt;p&gt;利用定时执行备份的shell脚本。&lt;/p&gt;
@@ -982,10 +982,10 @@
         </item>
         <item>
         <title>用sqlserver官方驱动包调用存储过程遇到的一个坑</title>
-        <link>hugo-theme-stack/p/%E7%94%A8sqlserver%E5%AE%98%E6%96%B9%E9%A9%B1%E5%8A%A8%E5%8C%85%E8%B0%83%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9D%91/</link>
+        <link>//localhost:1313/p/%E7%94%A8sqlserver%E5%AE%98%E6%96%B9%E9%A9%B1%E5%8A%A8%E5%8C%85%E8%B0%83%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9D%91/</link>
         <pubDate>Thu, 13 Oct 2022 00:00:00 +0000</pubDate>
         
-        <guid>hugo-theme-stack/p/%E7%94%A8sqlserver%E5%AE%98%E6%96%B9%E9%A9%B1%E5%8A%A8%E5%8C%85%E8%B0%83%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9D%91/</guid>
+        <guid>//localhost:1313/p/%E7%94%A8sqlserver%E5%AE%98%E6%96%B9%E9%A9%B1%E5%8A%A8%E5%8C%85%E8%B0%83%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9D%91/</guid>
         <description>&lt;p&gt;和外部系统做对接，对方提供了一个存储过程，对方为sqlserver数据库，我方为oracle数据库。
 需求简单来说就是调用对方的存储过程获得结果，转储到我方库，后续在对数据进行处理。&lt;/p&gt;
 &lt;p&gt;我写了个代码片段做测试，用jdbc来调用对方的存储过程，可是在调用后就直接报错了，错误信息如下&lt;/p&gt;
@@ -1099,10 +1099,10 @@
         </item>
         <item>
         <title>Linux中安装nvm</title>
-        <link>hugo-theme-stack/p/linux%E4%B8%AD%E5%AE%89%E8%A3%85nvm/</link>
+        <link>//localhost:1313/p/linux%E4%B8%AD%E5%AE%89%E8%A3%85nvm/</link>
         <pubDate>Fri, 27 May 2022 00:00:00 +0000</pubDate>
         
-        <guid>hugo-theme-stack/p/linux%E4%B8%AD%E5%AE%89%E8%A3%85nvm/</guid>
+        <guid>//localhost:1313/p/linux%E4%B8%AD%E5%AE%89%E8%A3%85nvm/</guid>
         <description>&lt;p&gt;NVM 是一个非常方便的node包管理工具，可以实现在NodeJS 各个不同版本之间自由的进行切换。
  &lt;/p&gt;
 &lt;h2 id=&#34;1下载nvm安装包&#34;&gt;1.下载nvm安装包

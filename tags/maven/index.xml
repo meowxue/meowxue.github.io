@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Maven on 苏格拉</title>
-        <link>hugo-theme-stack/tags/maven/</link>
+        <link>//localhost:1313/tags/maven/</link>
         <description>Recent content in Maven on 苏格拉</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Example Person</copyright>
-        <lastBuildDate>Sat, 10 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="hugo-theme-stack/tags/maven/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 10 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/tags/maven/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>maven安装本地的jar包到仓库</title>
-        <link>hugo-theme-stack/p/maven%E5%AE%89%E8%A3%85%E6%9C%AC%E5%9C%B0%E7%9A%84jar%E5%8C%85%E5%88%B0%E4%BB%93%E5%BA%93/</link>
+        <link>//localhost:1313/p/maven%E5%AE%89%E8%A3%85%E6%9C%AC%E5%9C%B0%E7%9A%84jar%E5%8C%85%E5%88%B0%E4%BB%93%E5%BA%93/</link>
         <pubDate>Sat, 10 Aug 2024 00:00:00 +0000</pubDate>
         
-        <guid>hugo-theme-stack/p/maven%E5%AE%89%E8%A3%85%E6%9C%AC%E5%9C%B0%E7%9A%84jar%E5%8C%85%E5%88%B0%E4%BB%93%E5%BA%93/</guid>
+        <guid>//localhost:1313/p/maven%E5%AE%89%E8%A3%85%E6%9C%AC%E5%9C%B0%E7%9A%84jar%E5%8C%85%E5%88%B0%E4%BB%93%E5%BA%93/</guid>
         <description>&lt;p&gt;项目中有用到人大金仓的数据库，但是这个包，在maven仓库中找不到，所以需要手动安装到仓库中。在此记录如何将下载好的jar包安装到仓库中。&lt;/p&gt;
 &lt;p&gt;命令格式如下:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
