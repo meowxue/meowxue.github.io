@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+    <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="NVM 是一个非常方便的node包管理工具，可以实现在NodeJS 各个不同版本之间自由的进行切换。 1.下载nvm安装包 官网地址： https://github.com/nvm-sh/nvm\n可选择最新的Releases版本，下面用0.38.0这个版本做示范\n示例版本地址：https://github.com/nvm-sh/nvm/archive/refs/tags/v0.38.0.tar.gz\n2.解压nvm 1 tar -zxvf nvm-0.38.0.tar.gz 可以移动解压的文件到你想放的目录\n3.配置环境 打开 ~/.bashrc\n1 vim ~/.bashrc 在 ~/.bashrc 的末尾加上以下的语句\n1 2 3 4 5 export NVM_DIR=&#34;$HOME/nvm所在的目录&#34; [ -s &#34;$NVM_DIR/nvm.sh&#34; ] &amp;&amp; \\. &#34;$NVM_DIR/nvm.sh&#34; # This loads nvm [ -s &#34;$NVM_DIR/bash_completion&#34; ] &amp;&amp; \\. &#34;$NVM_DIR/bash_completion&#34; # This loads nvm bash_completion # nodejs下载更换淘宝镜像 export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node 4.编译生效 1 source ~/.bashrc 验证是否成功，终端输入以下命令查看nvm版本号\n1 nvm -v 显示安装的版本号，即成功\n5.nvm常用命令 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 #查询目前线上所能安装的所有nodejs版本 nvm ls-remote #安装相应版本nodejs nvm install 14.19.3 #使用相应版本的nodejs nvm use 14.19.3 #列出已经安装的版本 nvm ls #卸载相应的nodejs nvm uninstall 14.19.3 #查看当前版本 nvm current 6.npm使用淘宝镜像 打开nvm目录下的 .npmrc在文件中添加下面的内容\n">
 <title>Linux中安装nvm</title>
 
-<link rel='canonical' href='//localhost:1313/p/linux%E4%B8%AD%E5%AE%89%E8%A3%85nvm/'>
+<link rel='canonical' href='hugo-theme-stack/p/linux%E4%B8%AD%E5%AE%89%E8%A3%85nvm/'>
 
-<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Linux中安装nvm">
+<link rel="stylesheet" href="hugo-theme-stack/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Linux中安装nvm">
 <meta property='og:description' content="NVM 是一个非常方便的node包管理工具，可以实现在NodeJS 各个不同版本之间自由的进行切换。 1.下载nvm安装包 官网地址： https://github.com/nvm-sh/nvm\n可选择最新的Releases版本，下面用0.38.0这个版本做示范\n示例版本地址：https://github.com/nvm-sh/nvm/archive/refs/tags/v0.38.0.tar.gz\n2.解压nvm 1 tar -zxvf nvm-0.38.0.tar.gz 可以移动解压的文件到你想放的目录\n3.配置环境 打开 ~/.bashrc\n1 vim ~/.bashrc 在 ~/.bashrc 的末尾加上以下的语句\n1 2 3 4 5 export NVM_DIR=&#34;$HOME/nvm所在的目录&#34; [ -s &#34;$NVM_DIR/nvm.sh&#34; ] &amp;&amp; \\. &#34;$NVM_DIR/nvm.sh&#34; # This loads nvm [ -s &#34;$NVM_DIR/bash_completion&#34; ] &amp;&amp; \\. &#34;$NVM_DIR/bash_completion&#34; # This loads nvm bash_completion # nodejs下载更换淘宝镜像 export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node 4.编译生效 1 source ~/.bashrc 验证是否成功，终端输入以下命令查看nvm版本号\n1 nvm -v 显示安装的版本号，即成功\n5.nvm常用命令 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 #查询目前线上所能安装的所有nodejs版本 nvm ls-remote #安装相应版本nodejs nvm install 14.19.3 #使用相应版本的nodejs nvm use 14.19.3 #列出已经安装的版本 nvm ls #卸载相应的nodejs nvm uninstall 14.19.3 #查看当前版本 nvm current 6.npm使用淘宝镜像 打开nvm目录下的 .npmrc在文件中添加下面的内容\n">
-<meta property='og:url' content='//localhost:1313/p/linux%E4%B8%AD%E5%AE%89%E8%A3%85nvm/'>
+<meta property='og:url' content='hugo-theme-stack/p/linux%E4%B8%AD%E5%AE%89%E8%A3%85nvm/'>
 <meta property='og:site_name' content='苏格拉'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Linux' /><meta property='article:tag' content='软件' /><meta property='article:tag' content='nodejs' /><meta property='article:published_time' content='2022-05-27T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2022-05-27T00:00:00&#43;00:00'/>
 <meta name="twitter:title" content="Linux中安装nvm">
@@ -54,13 +54,13 @@
         
             
             <figure class="site-avatar">
-                <a href="/">
+                <a href="/hugo-theme-stack/">
                 
                     
                     
                     
                         
-                        <img src="/img/avatar_hu_bbb4c3ca8f1815fe.jpg" width="300"
+                        <img src="hugo-theme-stack/img/avatar_hu_bbb4c3ca8f1815fe.jpg" width="300"
                             height="300" class="site-logo" loading="lazy" alt="Avatar">
                     
                 
@@ -73,7 +73,7 @@
         
         
         <div class="site-meta">
-            <h1 class="site-name"><a href="//localhost:1313/">苏格拉</a></h1>
+            <h1 class="site-name"><a href="/hugo-theme-stack">苏格拉</a></h1>
             <h2 class="site-description">你是谁？” “苏格拉” “…底？ “就苏格拉。没有底。”</h2>
         </div>
     </header><ol class="menu-social">
@@ -121,7 +121,7 @@
         
         
         <li >
-            <a href='/' >
+            <a href='hugo-theme-stack/' >
                 
                 
                 
@@ -141,7 +141,7 @@
         
         
         <li >
-            <a href='/%E8%AF%B4%E8%AF%B4/' >
+            <a href='hugo-theme-stack/%E8%AF%B4%E8%AF%B4/' >
                 
                 
                 
@@ -153,7 +153,7 @@
         
         
         <li >
-            <a href='/archives/' >
+            <a href='hugo-theme-stack/archives/' >
                 
                 
                 
@@ -173,7 +173,7 @@
         
         
         <li >
-            <a href='/about/' >
+            <a href='hugo-theme-stack/about/' >
                 
                 
                 
@@ -192,7 +192,7 @@
         
         
         <li >
-            <a href='/search/' >
+            <a href='hugo-theme-stack/search/' >
                 
                 
                 
@@ -284,7 +284,7 @@
     
     <header class="article-category">
         
-            <a href="/categories/linux/" style="background-color: #2a9d8f; color: #fff;">
+            <a href="hugo-theme-stack/categories/linux/" style="background-color: #2a9d8f; color: #fff;">
                 Linux
             </a>
         
@@ -293,7 +293,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/linux%E4%B8%AD%E5%AE%89%E8%A3%85nvm/">Linux中安装nvm</a>
+            <a href="hugo-theme-stack/p/linux%E4%B8%AD%E5%AE%89%E8%A3%85nvm/">Linux中安装nvm</a>
         </h2>
     
         
@@ -467,11 +467,11 @@
     
     <section class="article-tags">
         
-            <a href="/tags/linux/">Linux</a>
+            <a href="hugo-theme-stack/tags/linux/">Linux</a>
         
-            <a href="/tags/%E8%BD%AF%E4%BB%B6/">软件</a>
+            <a href="hugo-theme-stack/tags/%E8%BD%AF%E4%BB%B6/">软件</a>
         
-            <a href="/tags/nodejs/">Nodejs</a>
+            <a href="hugo-theme-stack/tags/nodejs/">Nodejs</a>
         
     </section>
 
@@ -505,7 +505,7 @@
             
                 
 <article class="">
-    <a href="/p/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/">
+    <a href="hugo-theme-stack/p/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/">
         
         
 
@@ -627,7 +627,7 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.c379715d01ce966da9b6eed5bc354dd0a6a8de47c36d4b6462fdc01464d258af.js" defer></script>
+            </script><script type="text/javascript" src="hugo-theme-stack/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');
