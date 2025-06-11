@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><meta charset='utf-8'>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="在日常数据库管理中，我们经常遇到需要处理字段中包含空格、回车符等特殊字符的情况。这些不可见字符不仅影响数据展示，还会导致数据处理异常和查询结果错误。本文将详细讲解如何在SQL中检测并清洗这些特殊字符。\n一、为什么需要关注空格和回车符？ 空格和回车符是常见的&quot;不可见字符&quot;，但它们可能带来严重问题：\n数据处理错误：&ldquo;A123&rdquo; 和 &ldquo;A 123&rdquo; 会被系统视为不同值 查询失效：用户搜索 &ldquo;关键字&rdquo; 无法匹配 &ldquo;关键 字&rdquo; 系统集成问题：API接口可能因回车符解析失败 显示异常：网页或报表出现意外换行或空白 二、检测字段中的空格和回车符 1. 通用方法：使用LIKE操作符 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 -- 检测空格 SELECT * FROM 表名 WHERE 字段名 LIKE &#39;% %&#39;; -- 检测回车符（换行符） SELECT * FROM 表名 WHERE 字段名 LIKE &#39;%\\n%&#39; -- MySQL OR 字段名 LIKE &#39;%&#39; + CHAR(10) + &#39;%&#39;; -- SQL Server -- 同时检测空格和回车 SELECT * FROM 表名 WHERE 字段名 LIKE &#39;% %&#39; OR 字段名 LIKE &#39;%\\n%&#39;; 2. 高级方法：正则表达式匹配 不同数据库系统的正则表达式函数：\n">
 <title>检测并去除数据库表字段中的空格与回车符</title>
 
-<link rel='canonical' href='hugo-theme-stack/p/%E6%A3%80%E6%B5%8B%E5%B9%B6%E5%8E%BB%E9%99%A4%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8%E5%AD%97%E6%AE%B5%E4%B8%AD%E7%9A%84%E7%A9%BA%E6%A0%BC%E4%B8%8E%E5%9B%9E%E8%BD%A6%E7%AC%A6/'>
+<link rel='canonical' href='//localhost:1313/p/%E6%A3%80%E6%B5%8B%E5%B9%B6%E5%8E%BB%E9%99%A4%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8%E5%AD%97%E6%AE%B5%E4%B8%AD%E7%9A%84%E7%A9%BA%E6%A0%BC%E4%B8%8E%E5%9B%9E%E8%BD%A6%E7%AC%A6/'>
 
-<link rel="stylesheet" href="hugo-theme-stack/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="检测并去除数据库表字段中的空格与回车符">
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="检测并去除数据库表字段中的空格与回车符">
 <meta property='og:description' content="在日常数据库管理中，我们经常遇到需要处理字段中包含空格、回车符等特殊字符的情况。这些不可见字符不仅影响数据展示，还会导致数据处理异常和查询结果错误。本文将详细讲解如何在SQL中检测并清洗这些特殊字符。\n一、为什么需要关注空格和回车符？ 空格和回车符是常见的&quot;不可见字符&quot;，但它们可能带来严重问题：\n数据处理错误：&ldquo;A123&rdquo; 和 &ldquo;A 123&rdquo; 会被系统视为不同值 查询失效：用户搜索 &ldquo;关键字&rdquo; 无法匹配 &ldquo;关键 字&rdquo; 系统集成问题：API接口可能因回车符解析失败 显示异常：网页或报表出现意外换行或空白 二、检测字段中的空格和回车符 1. 通用方法：使用LIKE操作符 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 -- 检测空格 SELECT * FROM 表名 WHERE 字段名 LIKE &#39;% %&#39;; -- 检测回车符（换行符） SELECT * FROM 表名 WHERE 字段名 LIKE &#39;%\\n%&#39; -- MySQL OR 字段名 LIKE &#39;%&#39; + CHAR(10) + &#39;%&#39;; -- SQL Server -- 同时检测空格和回车 SELECT * FROM 表名 WHERE 字段名 LIKE &#39;% %&#39; OR 字段名 LIKE &#39;%\\n%&#39;; 2. 高级方法：正则表达式匹配 不同数据库系统的正则表达式函数：\n">
-<meta property='og:url' content='hugo-theme-stack/p/%E6%A3%80%E6%B5%8B%E5%B9%B6%E5%8E%BB%E9%99%A4%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8%E5%AD%97%E6%AE%B5%E4%B8%AD%E7%9A%84%E7%A9%BA%E6%A0%BC%E4%B8%8E%E5%9B%9E%E8%BD%A6%E7%AC%A6/'>
+<meta property='og:url' content='//localhost:1313/p/%E6%A3%80%E6%B5%8B%E5%B9%B6%E5%8E%BB%E9%99%A4%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8%E5%AD%97%E6%AE%B5%E4%B8%AD%E7%9A%84%E7%A9%BA%E6%A0%BC%E4%B8%8E%E5%9B%9E%E8%BD%A6%E7%AC%A6/'>
 <meta property='og:site_name' content='苏格拉'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='数据库' /><meta property='article:tag' content='运维' /><meta property='article:published_time' content='2025-06-11T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-06-11T00:00:00&#43;00:00'/>
 <meta name="twitter:title" content="检测并去除数据库表字段中的空格与回车符">
@@ -54,13 +54,13 @@
         
             
             <figure class="site-avatar">
-                <a href="/hugo-theme-stack/">
+                <a href="/">
                 
                     
                     
                     
                         
-                        <img src="hugo-theme-stack/img/avatar_hu_bbb4c3ca8f1815fe.jpg" width="300"
+                        <img src="/img/avatar_hu_bbb4c3ca8f1815fe.jpg" width="300"
                             height="300" class="site-logo" loading="lazy" alt="Avatar">
                     
                 
@@ -73,7 +73,7 @@
         
         
         <div class="site-meta">
-            <h1 class="site-name"><a href="/hugo-theme-stack">苏格拉</a></h1>
+            <h1 class="site-name"><a href="//localhost:1313/">苏格拉</a></h1>
             <h2 class="site-description">你是谁？” “苏格拉” “…底？ “就苏格拉。没有底。”</h2>
         </div>
     </header><ol class="menu-social">
@@ -121,7 +121,7 @@
         
         
         <li >
-            <a href='hugo-theme-stack/' >
+            <a href='/' >
                 
                 
                 
@@ -141,7 +141,7 @@
         
         
         <li >
-            <a href='hugo-theme-stack/%E8%AF%B4%E8%AF%B4/' >
+            <a href='/%E8%AF%B4%E8%AF%B4/' >
                 
                 
                 
@@ -153,7 +153,7 @@
         
         
         <li >
-            <a href='hugo-theme-stack/archives/' >
+            <a href='/archives/' >
                 
                 
                 
@@ -173,7 +173,7 @@
         
         
         <li >
-            <a href='hugo-theme-stack/about/' >
+            <a href='/about/' >
                 
                 
                 
@@ -192,7 +192,7 @@
         
         
         <li >
-            <a href='hugo-theme-stack/search/' >
+            <a href='/search/' >
                 
                 
                 
@@ -314,7 +314,7 @@
     
     <header class="article-category">
         
-            <a href="hugo-theme-stack/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" >
+            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" >
                 数据库
             </a>
         
@@ -323,7 +323,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="hugo-theme-stack/p/%E6%A3%80%E6%B5%8B%E5%B9%B6%E5%8E%BB%E9%99%A4%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8%E5%AD%97%E6%AE%B5%E4%B8%AD%E7%9A%84%E7%A9%BA%E6%A0%BC%E4%B8%8E%E5%9B%9E%E8%BD%A6%E7%AC%A6/">检测并去除数据库表字段中的空格与回车符</a>
+            <a href="/p/%E6%A3%80%E6%B5%8B%E5%B9%B6%E5%8E%BB%E9%99%A4%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8%E5%AD%97%E6%AE%B5%E4%B8%AD%E7%9A%84%E7%A9%BA%E6%A0%BC%E4%B8%8E%E5%9B%9E%E8%BD%A6%E7%AC%A6/">检测并去除数据库表字段中的空格与回车符</a>
         </h2>
     
         
@@ -747,9 +747,9 @@
     
     <section class="article-tags">
         
-            <a href="hugo-theme-stack/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
         
-            <a href="hugo-theme-stack/tags/%E8%BF%90%E7%BB%B4/">运维</a>
+            <a href="/tags/%E8%BF%90%E7%BB%B4/">运维</a>
         
     </section>
 
@@ -783,7 +783,7 @@
             
                 
 <article class="">
-    <a href="hugo-theme-stack/p/oracle%E6%95%B0%E6%8D%AE%E6%B3%B5%E5%AF%BC%E5%87%BA%E7%9A%84dmp%E6%96%87%E4%BB%B6%E8%BF%98%E5%8E%9F/">
+    <a href="/p/oracle%E6%95%B0%E6%8D%AE%E6%B3%B5%E5%AF%BC%E5%87%BA%E7%9A%84dmp%E6%96%87%E4%BB%B6%E8%BF%98%E5%8E%9F/">
         
         
 
@@ -905,7 +905,7 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="hugo-theme-stack/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.c379715d01ce966da9b6eed5bc354dd0a6a8de47c36d4b6462fdc01464d258af.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');
