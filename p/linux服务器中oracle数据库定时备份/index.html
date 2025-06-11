@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+    <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="概述 大多数的linux发行版都默认安装了corn服务和crontab工具。cron服务是一个用于执行定时任务的后台服务，而crontab是用于编辑和管理用户的定时任务的命令行工具。通过crontab工具，用户可以添加、编辑、删除定时任务的执行时间和要运行的命令或者脚本。\n利用定时执行备份的shell脚本。\n">
 <title>Linux服务器中Oracle数据库定时备份</title>
 
-<link rel='canonical' href='//localhost:1313/p/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/'>
+<link rel='canonical' href='hugo-theme-stack/p/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/'>
 
-<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Linux服务器中Oracle数据库定时备份">
+<link rel="stylesheet" href="hugo-theme-stack/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Linux服务器中Oracle数据库定时备份">
 <meta property='og:description' content="概述 大多数的linux发行版都默认安装了corn服务和crontab工具。cron服务是一个用于执行定时任务的后台服务，而crontab是用于编辑和管理用户的定时任务的命令行工具。通过crontab工具，用户可以添加、编辑、删除定时任务的执行时间和要运行的命令或者脚本。\n利用定时执行备份的shell脚本。\n">
-<meta property='og:url' content='//localhost:1313/p/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/'>
+<meta property='og:url' content='hugo-theme-stack/p/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/'>
 <meta property='og:site_name' content='苏格拉'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Linux' /><meta property='article:tag' content='运维' /><meta property='article:tag' content='oracle' /><meta property='article:published_time' content='2023-08-30T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2023-08-30T00:00:00&#43;00:00'/>
 <meta name="twitter:title" content="Linux服务器中Oracle数据库定时备份">
@@ -54,13 +54,13 @@
         
             
             <figure class="site-avatar">
-                <a href="/">
+                <a href="/hugo-theme-stack/">
                 
                     
                     
                     
                         
-                        <img src="/img/avatar_hu_bbb4c3ca8f1815fe.jpg" width="300"
+                        <img src="hugo-theme-stack/img/avatar_hu_bbb4c3ca8f1815fe.jpg" width="300"
                             height="300" class="site-logo" loading="lazy" alt="Avatar">
                     
                 
@@ -73,7 +73,7 @@
         
         
         <div class="site-meta">
-            <h1 class="site-name"><a href="//localhost:1313/">苏格拉</a></h1>
+            <h1 class="site-name"><a href="/hugo-theme-stack">苏格拉</a></h1>
             <h2 class="site-description">你是谁？” “苏格拉” “…底？ “就苏格拉。没有底。”</h2>
         </div>
     </header><ol class="menu-social">
@@ -121,7 +121,7 @@
         
         
         <li >
-            <a href='/' >
+            <a href='hugo-theme-stack/' >
                 
                 
                 
@@ -141,7 +141,7 @@
         
         
         <li >
-            <a href='/%E8%AF%B4%E8%AF%B4/' >
+            <a href='hugo-theme-stack/%E8%AF%B4%E8%AF%B4/' >
                 
                 
                 
@@ -153,7 +153,7 @@
         
         
         <li >
-            <a href='/archives/' >
+            <a href='hugo-theme-stack/archives/' >
                 
                 
                 
@@ -173,7 +173,7 @@
         
         
         <li >
-            <a href='/about/' >
+            <a href='hugo-theme-stack/about/' >
                 
                 
                 
@@ -192,7 +192,7 @@
         
         
         <li >
-            <a href='/search/' >
+            <a href='hugo-theme-stack/search/' >
                 
                 
                 
@@ -285,7 +285,7 @@
     
     <header class="article-category">
         
-            <a href="/categories/linux/" style="background-color: #2a9d8f; color: #fff;">
+            <a href="hugo-theme-stack/categories/linux/" style="background-color: #2a9d8f; color: #fff;">
                 Linux
             </a>
         
@@ -294,7 +294,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/">Linux服务器中Oracle数据库定时备份</a>
+            <a href="hugo-theme-stack/p/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/">Linux服务器中Oracle数据库定时备份</a>
         </h2>
     
         
@@ -608,11 +608,11 @@
     
     <section class="article-tags">
         
-            <a href="/tags/linux/">Linux</a>
+            <a href="hugo-theme-stack/tags/linux/">Linux</a>
         
-            <a href="/tags/%E8%BF%90%E7%BB%B4/">运维</a>
+            <a href="hugo-theme-stack/tags/%E8%BF%90%E7%BB%B4/">运维</a>
         
-            <a href="/tags/oracle/">Oracle</a>
+            <a href="hugo-theme-stack/tags/oracle/">Oracle</a>
         
     </section>
 
@@ -646,7 +646,7 @@
             
                 
 <article class="">
-    <a href="/p/linux%E4%B8%AD%E5%AE%89%E8%A3%85nvm/">
+    <a href="hugo-theme-stack/p/linux%E4%B8%AD%E5%AE%89%E8%A3%85nvm/">
         
         
 
@@ -659,7 +659,7 @@
             
                 
 <article class="">
-    <a href="/p/oracle%E6%95%B0%E6%8D%AE%E6%B3%B5%E5%AF%BC%E5%87%BA%E7%9A%84dmp%E6%96%87%E4%BB%B6%E8%BF%98%E5%8E%9F/">
+    <a href="hugo-theme-stack/p/oracle%E6%95%B0%E6%8D%AE%E6%B3%B5%E5%AF%BC%E5%87%BA%E7%9A%84dmp%E6%96%87%E4%BB%B6%E8%BF%98%E5%8E%9F/">
         
         
 
@@ -672,7 +672,7 @@
             
                 
 <article class="">
-    <a href="/p/windows%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/">
+    <a href="hugo-theme-stack/p/windows%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%ADoracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD/">
         
         
 
@@ -794,7 +794,7 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.c379715d01ce966da9b6eed5bc354dd0a6a8de47c36d4b6462fdc01464d258af.js" defer></script>
+            </script><script type="text/javascript" src="hugo-theme-stack/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');
