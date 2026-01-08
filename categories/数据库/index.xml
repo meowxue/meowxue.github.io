@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>数据库 on 苏格拉</title>
-        <link>hugo-theme-stack/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+        <link>//localhost:1313/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
         <description>Recent content in 数据库 on 苏格拉</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Example Person</copyright>
-        <lastBuildDate>Wed, 11 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="hugo-theme-stack/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 11 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>检测并去除数据库表字段中的空格与回车符</title>
-        <link>hugo-theme-stack/p/%E6%A3%80%E6%B5%8B%E5%B9%B6%E5%8E%BB%E9%99%A4%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8%E5%AD%97%E6%AE%B5%E4%B8%AD%E7%9A%84%E7%A9%BA%E6%A0%BC%E4%B8%8E%E5%9B%9E%E8%BD%A6%E7%AC%A6/</link>
+        <link>//localhost:1313/p/%E6%A3%80%E6%B5%8B%E5%B9%B6%E5%8E%BB%E9%99%A4%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8%E5%AD%97%E6%AE%B5%E4%B8%AD%E7%9A%84%E7%A9%BA%E6%A0%BC%E4%B8%8E%E5%9B%9E%E8%BD%A6%E7%AC%A6/</link>
         <pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate>
         
-        <guid>hugo-theme-stack/p/%E6%A3%80%E6%B5%8B%E5%B9%B6%E5%8E%BB%E9%99%A4%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8%E5%AD%97%E6%AE%B5%E4%B8%AD%E7%9A%84%E7%A9%BA%E6%A0%BC%E4%B8%8E%E5%9B%9E%E8%BD%A6%E7%AC%A6/</guid>
+        <guid>//localhost:1313/p/%E6%A3%80%E6%B5%8B%E5%B9%B6%E5%8E%BB%E9%99%A4%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8%E5%AD%97%E6%AE%B5%E4%B8%AD%E7%9A%84%E7%A9%BA%E6%A0%BC%E4%B8%8E%E5%9B%9E%E8%BD%A6%E7%AC%A6/</guid>
         <description>&lt;p&gt;在日常数据库管理中，我们经常遇到需要处理字段中包含空格、回车符等特殊字符的情况。这些不可见字符不仅影响数据展示，还会导致数据处理异常和查询结果错误。本文将详细讲解如何在SQL中检测并清洗这些特殊字符。&lt;/p&gt;
 &lt;h2 id=&#34;一为什么需要关注空格和回车符&#34;&gt;一、为什么需要关注空格和回车符？
 &lt;/h2&gt;&lt;p&gt;空格和回车符是常见的&amp;quot;不可见字符&amp;quot;，但它们可能带来严重问题：&lt;/p&gt;
@@ -381,10 +381,10 @@
         </item>
         <item>
         <title>Oracle数据泵导出的DMP文件还原 </title>
-        <link>hugo-theme-stack/p/oracle%E6%95%B0%E6%8D%AE%E6%B3%B5%E5%AF%BC%E5%87%BA%E7%9A%84dmp%E6%96%87%E4%BB%B6%E8%BF%98%E5%8E%9F/</link>
+        <link>//localhost:1313/p/oracle%E6%95%B0%E6%8D%AE%E6%B3%B5%E5%AF%BC%E5%87%BA%E7%9A%84dmp%E6%96%87%E4%BB%B6%E8%BF%98%E5%8E%9F/</link>
         <pubDate>Fri, 25 Oct 2024 00:00:00 +0000</pubDate>
         
-        <guid>hugo-theme-stack/p/oracle%E6%95%B0%E6%8D%AE%E6%B3%B5%E5%AF%BC%E5%87%BA%E7%9A%84dmp%E6%96%87%E4%BB%B6%E8%BF%98%E5%8E%9F/</guid>
+        <guid>//localhost:1313/p/oracle%E6%95%B0%E6%8D%AE%E6%B3%B5%E5%AF%BC%E5%87%BA%E7%9A%84dmp%E6%96%87%E4%BB%B6%E8%BF%98%E5%8E%9F/</guid>
         <description>&lt;p&gt;Oracle数据库备份的DMP文件如何还原到数据库中，或者还原到另外一个Oracle数据库中&lt;/p&gt;
 &lt;p&gt;下面这个命令在oracle所在服务器中根据自身情况修改后执行：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
