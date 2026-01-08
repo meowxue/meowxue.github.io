@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Pages on 苏格拉</title>
-        <link>//localhost:1313/page/</link>
+        <link>hugo-theme-stack/page/</link>
         <description>Recent content in Pages on 苏格拉</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Example Person</copyright>
-        <lastBuildDate>Tue, 28 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 28 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="hugo-theme-stack/page/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>归档</title>
-        <link>//localhost:1313/archives/</link>
+        <link>hugo-theme-stack/archives/</link>
         <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
         
-        <guid>//localhost:1313/archives/</guid>
+        <guid>hugo-theme-stack/archives/</guid>
         <description></description>
         </item>
         <item>
         <title>关于</title>
-        <link>//localhost:1313/about/</link>
+        <link>hugo-theme-stack/about/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>//localhost:1313/about/</guid>
+        <guid>hugo-theme-stack/about/</guid>
         <description>&lt;h2 id=&#34;关于我&#34;&gt;关于我
 &lt;/h2&gt;&lt;p&gt;90后，处女男，普普通通打工人，i型人格。喜欢骑行、唱歌、打游戏&amp;hellip;
 最喜欢的歌手是许嵩，&lt;/p&gt;
@@ -36,11 +36,63 @@
         </item>
         <item>
         <title>说说</title>
-        <link>//localhost:1313/%E8%AF%B4%E8%AF%B4/</link>
+        <link>hugo-theme-stack/%E8%AF%B4%E8%AF%B4/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>//localhost:1313/%E8%AF%B4%E8%AF%B4/</guid>
+        <guid>hugo-theme-stack/%E8%AF%B4%E8%AF%B4/</guid>
         <description>&lt;div class=&#34;daily-speak&#34;&gt;
+    &lt;div class=&#34;speak-header&#34;&gt;
+        &lt;div class=&#34;speak-date&#34;&gt;
+            &lt;span class=&#34;date-day&#34;&gt;17&lt;/span&gt;
+            &lt;span class=&#34;date-month&#34;&gt;11月&lt;/span&gt;
+            &lt;span class=&#34;date-year&#34;&gt;2025&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;weather-tag&#34;&gt; 🌥️ 阴&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;speak-content&#34;&gt;
+        &lt;p&gt;😭️&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;daily-speak&#34;&gt;
+    &lt;div class=&#34;speak-header&#34;&gt;
+        &lt;div class=&#34;speak-date&#34;&gt;
+            &lt;span class=&#34;date-day&#34;&gt;3&lt;/span&gt;
+            &lt;span class=&#34;date-month&#34;&gt;9月&lt;/span&gt;
+            &lt;span class=&#34;date-year&#34;&gt;2025&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;weather-tag&#34;&gt; 🌥️ 阴&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;speak-content&#34;&gt;
+        &lt;p&gt;今天是反法西斯战争80周年。&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;daily-speak&#34;&gt;
+    &lt;div class=&#34;speak-header&#34;&gt;
+        &lt;div class=&#34;speak-date&#34;&gt;
+            &lt;span class=&#34;date-day&#34;&gt;23&lt;/span&gt;
+            &lt;span class=&#34;date-month&#34;&gt;8月&lt;/span&gt;
+            &lt;span class=&#34;date-year&#34;&gt;2025&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;weather-tag&#34;&gt; 🌧️ 小雨&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;speak-content&#34;&gt;
+        &lt;p&gt;后弦！这也是我为数不多喜欢的歌手之一，我独自一人来到北展剧场，看后弦的演唱会。我全程都在跟唱，嗓子都要冒烟了，不得不说，后弦的现场很稳，真不错！希望明年还能继续开演唱会。&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;daily-speak&#34;&gt;
+    &lt;div class=&#34;speak-header&#34;&gt;
+        &lt;div class=&#34;speak-date&#34;&gt;
+            &lt;span class=&#34;date-day&#34;&gt;28&lt;/span&gt;
+            &lt;span class=&#34;date-month&#34;&gt;6月&lt;/span&gt;
+            &lt;span class=&#34;date-year&#34;&gt;2025&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;weather-tag&#34;&gt;☀️ 晴 转 雨 雨&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;speak-content&#34;&gt;
+        &lt;p&gt;期待了这么久，今天可算让我见到真人了，嵩哥真帅！现场很嗨，有机会还去。&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;daily-speak&#34;&gt;
     &lt;div class=&#34;speak-header&#34;&gt;
         &lt;div class=&#34;speak-date&#34;&gt;
             &lt;span class=&#34;date-day&#34;&gt;10&lt;/span&gt;
@@ -218,10 +270,10 @@
         </item>
         <item>
         <title>搜索</title>
-        <link>//localhost:1313/search/</link>
+        <link>hugo-theme-stack/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>//localhost:1313/search/</guid>
+        <guid>hugo-theme-stack/search/</guid>
         <description></description>
         </item>
         
