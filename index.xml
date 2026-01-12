@@ -7,7 +7,72 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Example Person</copyright>
-        <lastBuildDate>Wed, 26 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 12 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>windows安装mysql压缩包版</title>
+        <link>//localhost:1313/p/windows%E5%AE%89%E8%A3%85mysql%E5%8E%8B%E7%BC%A9%E5%8C%85%E7%89%88/</link>
+        <pubDate>Mon, 12 Jan 2026 00:00:00 +0000</pubDate>
+        
+        <guid>//localhost:1313/p/windows%E5%AE%89%E8%A3%85mysql%E5%8E%8B%E7%BC%A9%E5%8C%85%E7%89%88/</guid>
+        <description>&lt;p&gt;以下基于常见实践提供MySQL压缩包安装配置教程，适用于Windows系统。&lt;strong&gt;‌操作前请确保以管理员身份运行命令提示符或PowerShell‌，并‌避免使用中文路径‌。‌&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;下载与解压：&lt;/strong&gt; 访问MySQL官方下载页面（https://dev.mysql.com/downloads/mysql/），选择Windows (x86, 64-bit)版本的压缩包（如mysql-8.0.x-x-winx64.zip），下载后解压到目标目录（例如C:\mysql），解压后的文件夹名称需保持完整。‌&lt;/p&gt;
+&lt;p&gt;也可以使用这个国内镜像来下载，下载地址：mySQL &lt;a class=&#34;link&#34; href=&#34;https://mirrors.sohu.com/mysql/MySQL-8.0/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://mirrors.sohu.com/mysql/MySQL-8.0/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;‌配置环境变量：‌&lt;/strong&gt; 右键点击“此电脑”选择“属性”，进入“高级系统设置”→“环境变量”，在“系统变量”中找到Path变量并编辑，‌新建条目添加解压目录下的bin路径‌（如C:\mysql\bin），完成后保存并重启命令提示符以使更改生效。‌12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;‌创建配置文件：‌&lt;/strong&gt; 在解压目录的同级位置（如C:\mysql）创建my.ini文件（注意扩展名必须为.ini），内容需根据实际路径调整，例如：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;[client]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;na&#34;&gt;port&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;3306&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;na&#34;&gt;default-character-set&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;utf8mb4&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;[mysqld]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 设置MySQL安装目录&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;na&#34;&gt;basedir&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;C:\\mysql&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 设置数据存放目录&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;na&#34;&gt;datadir&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;C:\\mysql\\data&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 设置端口&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;na&#34;&gt;port&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;3306&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 设置字符集&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;na&#34;&gt;character-set-server&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;utf8mb4&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 允许最大连接数&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;na&#34;&gt;max_connections&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;200&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;关键点包括：‌&lt;/strong&gt; basedir和datadir路径使用双反斜杠或正斜杠，datadir目录需在初始化前存在或由MySQL自动创建。‌12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;‌初始化与安装服务：‌&lt;/strong&gt; 以管理员身份打开命令提示符，切换到bin目录（如cd C:\mysql\bin），执行以下命令：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;初始化数据目录：mysqld &amp;ndash;initialize &amp;ndash;console（记录输出中的临时密码）&lt;/li&gt;
+&lt;li&gt;安装MySQL服务：mysqld install&lt;/li&gt;
+&lt;li&gt;初始化会生成data目录和初始配置，临时密码用于首次登录。‌23&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;‌启动服务与设置密码：‌&lt;/strong&gt; 执行net start mysql启动服务，然后使用mysql -u root -p登录（输入初始化生成的临时密码），首次登录后立即设置新密码：ALTER USER &amp;lsquo;root&amp;rsquo;@&amp;rsquo;localhost&amp;rsquo; IDENTIFIED BY &amp;lsquo;你的新密码&amp;rsquo;;，完成后输入exit退出。‌23&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;‌常见问题处理：‌&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;‌端口冲突‌：若端口3306被占用，修改my.ini中的port值并重启服务&lt;/li&gt;
+&lt;li&gt;‌服务安装失败‌：先执行mysqld remove卸载残留服务，检查my.ini路径是否正确&lt;/li&gt;
+&lt;li&gt;‌权限错误‌：确保命令提示符以管理员身份运行，解压目录无中文路径&lt;/li&gt;
+&lt;li&gt;‌无法启动服务‌：检查data目录权限，或删除data目录后重新初始化（注意备份数据&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>java.lang.IllegalArgumentException: java.security.InvalidKeyException: Illegal key size错误解决</title>
         <link>//localhost:1313/p/java.lang.illegalargumentexception-java.security.invalidkeyexception-illegal-key-size%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3/</link>
         <pubDate>Wed, 26 Nov 2025 00:00:00 +0000</pubDate>
@@ -1685,6 +1750,21 @@
         <description>&lt;div class=&#34;daily-speak&#34;&gt;
     &lt;div class=&#34;speak-header&#34;&gt;
         &lt;div class=&#34;speak-date&#34;&gt;
+            &lt;span class=&#34;date-day&#34;&gt;10&lt;/span&gt;
+            &lt;span class=&#34;date-month&#34;&gt;01月&lt;/span&gt;
+            &lt;span class=&#34;date-year&#34;&gt;2025&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;weather-tag&#34;&gt; ☀️ 晴&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;speak-content&#34;&gt;
+        &lt;p&gt;复刻一下石锅拌饭，做起来是真的简单，蒸饭、蔬菜焯水、调个拌饭汁齐活，懒人首选！这玩意能有啥成本&lt;/p&gt;
+        &lt;img src=&#34;https://s41.ax1x.com/2026/01/12/pZB6Kld.jpg&#34; alt=&#34;pZB6Kld.jpg&#34; border=&#34;0&#34; style=&#34;width:200px&#34;&gt;
+        &lt;img src=&#34;https://s41.ax1x.com/2026/01/12/pZB6QOI.jpg&#34; alt=&#34;pZB6QOI.jpg&#34; border=&#34;0&#34; style=&#34;width:200px&#34;&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;daily-speak&#34;&gt;
+    &lt;div class=&#34;speak-header&#34;&gt;
+        &lt;div class=&#34;speak-date&#34;&gt;
             &lt;span class=&#34;date-day&#34;&gt;17&lt;/span&gt;
             &lt;span class=&#34;date-month&#34;&gt;11月&lt;/span&gt;
             &lt;span class=&#34;date-year&#34;&gt;2025&lt;/span&gt;
@@ -1693,6 +1773,35 @@
     &lt;/div&gt;
     &lt;div class=&#34;speak-content&#34;&gt;
         &lt;p&gt;😭️&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;daily-speak&#34;&gt;
+    &lt;div class=&#34;speak-header&#34;&gt;
+        &lt;div class=&#34;speak-date&#34;&gt;
+            &lt;span class=&#34;date-day&#34;&gt;21&lt;/span&gt;
+            &lt;span class=&#34;date-month&#34;&gt;12月&lt;/span&gt;
+            &lt;span class=&#34;date-year&#34;&gt;2025&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;weather-tag&#34;&gt; ☀️ 晴&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;speak-content&#34;&gt;
+        &lt;p&gt;刷视频刷到了卤蛋的做法，然后就起来动手了，深夜卤鸡蛋&lt;/p&gt;
+        &lt;img src=&#34;https://s41.ax1x.com/2026/01/12/pZB6uSH.jpg&#34; alt=&#34;pZB6uSH.jpg&#34; border=&#34;0&#34; style=&#34;width:200px&#34;&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;daily-speak&#34;&gt;
+    &lt;div class=&#34;speak-header&#34;&gt;
+        &lt;div class=&#34;speak-date&#34;&gt;
+            &lt;span class=&#34;date-day&#34;&gt;14&lt;/span&gt;
+            &lt;span class=&#34;date-month&#34;&gt;12月&lt;/span&gt;
+            &lt;span class=&#34;date-year&#34;&gt;2025&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;weather-tag&#34;&gt; 🌥️ 阴&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;speak-content&#34;&gt;
+        &lt;p&gt;今天做了一次部队火锅，甜辣还有辣白菜的味道，还可以不算难吃，我觉得这个火锅主要就是吃方便面，哈哈哈&lt;/p&gt;
+        &lt;img src=&#34;https://s41.ax1x.com/2026/01/12/pZB6M6A.jpg&#34; alt=&#34;pZB6M6A.jpg&#34; border=&#34;0&#34; style=&#34;width:200px&#34;&gt;
+        &lt;img src=&#34;https://s41.ax1x.com/2026/01/12/pZB61mt.jpg&#34; alt=&#34;pZB61mt.jpg&#34; border=&#34;0&#34; style=&#34;width:200px&#34;&gt;
     &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&#34;daily-speak&#34;&gt;
@@ -1728,7 +1837,7 @@
             &lt;span class=&#34;date-month&#34;&gt;6月&lt;/span&gt;
             &lt;span class=&#34;date-year&#34;&gt;2025&lt;/span&gt;
         &lt;/div&gt;
-        &lt;div class=&#34;weather-tag&#34;&gt;☀️ 晴 转 雨 雨&lt;/div&gt;
+        &lt;div class=&#34;weather-tag&#34;&gt;☀️ 晴 转 雨&lt;/div&gt;
     &lt;/div&gt;
     &lt;div class=&#34;speak-content&#34;&gt;
         &lt;p&gt;期待了这么久，今天可算让我见到真人了，嵩哥真帅！现场很嗨，有机会还去。&lt;/p&gt;
